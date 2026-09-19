@@ -861,169 +861,224 @@ section {
 /* ==========================================================================
    6. HOST SECTION
    ========================================================================== */
+/* ==========================================================================
+   6. HOST SECTION
+   ========================================================================== */
 .host-section {
-  padding: 40px 0;
+  padding: 50px 0;
+  position: relative;
 }
 
 .host-card-container {
-  background: #031A37;
-  border: 1px solid #1457A5;
-  border-radius: var(--radius-lg);
-  padding: 32px;
+  background: linear-gradient(135deg, rgba(4, 26, 58, 0.95) 0%, rgba(2, 14, 34, 0.98) 100%);
+  border: 1px solid rgba(45, 120, 225, 0.38);
+  border-radius: 28px;
+  padding: 38px 44px;
   display: grid;
-  grid-template-columns: 28% 44% 28%;
+  grid-template-columns: 280px 1fr;
   align-items: center;
-  gap: 28px;
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+  gap: 40px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Left: Profile Column */
+.host-profile-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 }
 
 .host-image-wrap {
   position: relative;
-  border-radius: var(--radius-md);
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(38, 142, 255, 0.5);
+  border: 3px solid rgba(255, 106, 61, 0.85);
   background: #061C39;
+  box-shadow: 0 0 35px rgba(255, 106, 61, 0.28);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
 }
 
 .host-img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
   display: block;
+  border-radius: 50%;
 }
 
 .host-live-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #FF6A3D;
   color: #FFFFFF;
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.host-center-block {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.host-live-badge .pulse-dot {
+  width: 5px;
+  height: 5px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #FFFFFF;
+  animation: pulseLive 1.8s infinite;
 }
 
-.host-copy-wrap {
+.host-quote-snippet {
+  background: rgba(18, 55, 110, 0.3);
+  border: 1px solid rgba(56, 162, 255, 0.22);
+  border-radius: 14px;
+  padding: 10px 14px;
+  max-width: 260px;
+  text-align: center;
+}
+
+.host-quote-snippet .quote-icon {
+  font-size: 1.2rem;
+  color: #38A2FF;
+  margin-bottom: 2px;
+  display: inline-block;
+}
+
+.host-quote-snippet .quote-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #E2EDFC;
+  line-height: 1.35;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.host-quote-snippet .quote-author {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8BA4C4;
+}
+
+/* Right: Content Column */
+.host-content-col {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.host-content-col .pill-eyebrow {
+  width: fit-content;
+  align-self: flex-start;
+  margin-bottom: 4px;
 }
 
 .host-name {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #F6F9FF;
-  line-height: 1.15;
-  margin-bottom: 2px;
+  font-size: 2.2rem;
+  font-weight: 850;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .host-role {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--cyan);
-  margin-bottom: 8px;
+  color: #38A2FF;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
 }
 
 .host-bio {
-  font-size: 0.82rem;
-  color: #AABBD0;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  color: #A8BCD4;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 8px;
 }
 
+/* Proof Metrics Grid */
 .host-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  background: #02142C;
-  border: 1px solid #1656AB;
-  border-radius: 12px;
-  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(2, 16, 38, 0.75);
+  border: 1px solid rgba(28, 90, 180, 0.45);
+  border-radius: 16px;
+  padding: 14px 22px;
+  gap: 12px;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
   text-align: center;
+  flex: 1;
 }
 
 .stat-val {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.45rem;
+  font-weight: 850;
   line-height: 1.1;
 }
 
-.stat-val.blue { color: #168BFF; }
+.stat-val.blue { color: #38A2FF; }
 .stat-val.orange { color: #FF6A3D; }
-.stat-val.purple { color: #8F46FF; }
+.stat-val.purple { color: #A76BFF; }
 .stat-val.green { color: #00D894; }
 
 .stat-lbl {
-  font-size: 0.62rem;
-  color: #A8B8CB;
-  margin-top: 2px;
-  line-height: 1.2;
+  font-size: 0.72rem;
+  color: #8BA4C4;
+  margin-top: 3px;
+  line-height: 1.25;
 }
 
-/* Decorative Glow Quote Card (Right) */
-.host-quote-card {
-  position: relative;
+.stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+/* Trust Highlights Row */
+.host-highlights-row {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
-/* Quote tagline — converted from handwriting to clean sans */
-.quote-tagline {
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
+.host-highlight-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(188, 210, 235, 0.65);
-  line-height: 1.4;
-  text-align: left;
-}
-
-.quote-speech-box {
-  position: relative;
-  background: linear-gradient(135deg, rgba(8, 32, 70, 0.95) 0%, rgba(13, 23, 56, 0.95) 100%);
-  border: 1px solid rgba(22, 139, 255, 0.75);
-  border-radius: 16px;
-  padding: 18px 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 30px rgba(22, 139, 255, 0.2);
-}
-
-.quote-icon {
-  font-size: 1.6rem;
-  color: #38A2FF;
-  margin-bottom: 6px;
-  display: block;
-}
-
-.quote-text {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #F4F8FF;
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-
-.quote-author {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: #9DAEC7;
-  text-align: right;
+  color: #C5D8EE;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 6px 12px;
+  border-radius: 20px;
 }
 
 /* ==========================================================================
@@ -1359,12 +1414,39 @@ section {
   }
 
   .host-card-container {
-    grid-template-columns: 34% 66%;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .host-profile-col {
+    align-items: center;
+  }
+
+  .host-content-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .host-content-col .pill-eyebrow {
+    align-self: center;
   }
 
   .host-stats-grid {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .stat-sep {
+    display: none !important;
+  }
+
+  .host-highlights-row {
+    justify-content: center;
   }
 
   .registration-grid {
@@ -1462,11 +1544,40 @@ section {
 
   .host-card-container {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 24px 16px;
+    border-radius: 20px;
+    gap: 24px;
+  }
+
+  .host-image-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .host-name {
+    font-size: 1.75rem;
   }
 
   .host-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px 10px;
+  }
+
+  .stat-val {
+    font-size: 1.25rem;
+  }
+
+  .host-highlights-row {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .host-highlight-tag {
+    justify-content: center;
+    width: 100%;
   }
 
   .form-inputs-grid {
