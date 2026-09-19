@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow My Customers - Live Meta Ads Workshop | Sunkiran Dimex</title>
+  <meta name="description" content="Join Kiran Hajare for a live 90-minute Meta Ads workshop on building a predictable customer acquisition system with Facebook and Instagram advertising.">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+
+  <!-- Phosphor Icons (Locked to Phosphor Bold weight) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/workshop.css">
+</head>
+<body class="bg-workshop-grid">
+
+  <!-- Ambient Glowing Backlights -->
+  <div class="workshop-ambient-glow glow-hero-blue" aria-hidden="true"></div>
+  <div class="workshop-ambient-glow glow-hero-cyan" aria-hidden="true"></div>
+  <div class="workshop-ambient-glow glow-middle-purple" aria-hidden="true"></div>
+  <div class="workshop-ambient-glow glow-footer-orange" aria-hidden="true"></div>
+
+  <!-- ========================================================
+       1. NAVIGATION HEADER (Single-Line Desktop, Kinetic Mobile Drawer)
+       ======================================================== -->
+  <header class="header-sticky">
+    <div class="container nav-container">
+      
+      <!-- Left Brand Block -->
+      <a href="index.html" class="nav-brand">
+        <div class="brand-icon-box">
+          <div class="brand-icon-inner">
+            <img src="images/logo.svg" alt="Sunkiran Dimex Sunrise Logo" style="width: 24px; height: 24px;">
+          </div>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">Sunkiran Dimex</span>
+          <span class="brand-tagline">TECH | MARKETING | GROWTH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+
+        <!-- Services Dropdown -->
+        <div class="nav-dropdown">
+          <a href="index.html#services" class="nav-link">
+            Services <i class="ph ph-caret-down" style="font-size: 0.85rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <div style="padding: 6px 12px 10px; border-bottom: 1px solid rgba(115, 160, 230, 0.2);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #4D9DFF; letter-spacing: 0.05em;">
+                Core Capabilities
+              </span>
+            </div>
+            <a href="index.html#services" class="dropdown-item">
+              <div class="dropdown-icon"><i class="ph-bold ph-code"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">Website Development</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">Custom corporate & high-speed platforms</div>
+              </div>
+            </a>
+            <a href="index.html#services" class="dropdown-item">
+              <div class="dropdown-icon"><i class="ph-bold ph-database"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">Software Development</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">Tailored ERP, portals & web apps</div>
+              </div>
+            </a>
+            <a href="index.html#services" class="dropdown-item">
+              <div class="dropdown-icon"><i class="ph-bold ph-megaphone"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">Meta & Google Ads</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">High-ROAS customer acquisition</div>
+              </div>
+            </a>
+            <a href="index.html#services" class="dropdown-item">
+              <div class="dropdown-icon"><i class="ph-bold ph-whatsapp-logo"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">WhatsApp Automation & CRM</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">Chatbot workflows & lead routing</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Solutions Dropdown -->
+        <div class="nav-dropdown">
+          <a href="index.html#growth-engine" class="nav-link">
+            Solutions <i class="ph ph-caret-down" style="font-size: 0.85rem;"></i>
+          </a>
+          <div class="dropdown-menu">
+            <div style="padding: 6px 12px 10px; border-bottom: 1px solid rgba(115, 160, 230, 0.2);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: #FF6A00; letter-spacing: 0.05em;">
+                Growth Outcomes
+              </span>
+            </div>
+            <a href="index.html#growth-engine" class="dropdown-item">
+              <div class="dropdown-icon" style="background: rgba(255, 106, 0, 0.18); color: #FF6A00;"><i class="ph-bold ph-chart-line-up"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">Customer Acquisition</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">Predictable lead generation pipelines</div>
+              </div>
+            </a>
+            <a href="index.html#growth-engine" class="dropdown-item">
+              <div class="dropdown-icon" style="background: rgba(255, 106, 0, 0.18); color: #FF6A00;"><i class="ph-bold ph-gear-six"></i></div>
+              <div>
+                <div style="font-size: 0.9rem; font-weight: 700;">Business Automation</div>
+                <div style="font-size: 0.74rem; color: #9DAEC7;">Zero manual follow-ups & CRM sync</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#our-process" class="nav-link">Our Process</a>
+        <a href="index.html#case-studies" class="nav-link">Case Studies</a>
+        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="workshop.html" class="nav-link active" aria-current="page">Workshop</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Nav Actions -->
+      <div class="nav-actions">
+        <a href="#register" class="btn btn-orange nav-cta-btn">
+          <span>Reserve My Seat &nbsp;→</span>
+        </a>
+
+        <button id="mobile-menu-btn" class="mobile-menu-trigger" aria-label="Open Navigation Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop"></div>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="nav-brand">
+        <div class="brand-icon-box" style="width: 40px; height: 40px;">
+          <div class="brand-icon-inner">
+            <img src="images/logo.svg" alt="Sunkiran Dimex Logo" style="width: 20px; height: 20px;">
+          </div>
+        </div>
+        <div>
+          <div class="brand-title" style="font-size: 1.15rem;">Sunkiran Dimex</div>
+          <div class="brand-tagline" style="font-size: 0.65rem;">TECH | MARKETING | GROWTH</div>
+        </div>
+      </div>
+      <button id="mobile-drawer-close" class="mobile-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <a href="index.html" class="mobile-nav-link">
+        <i class="ph-bold ph-house-line"></i> <span>Home</span>
+      </a>
+      <a href="index.html#services" class="mobile-nav-link">
+        <i class="ph-bold ph-code"></i> <span>Services</span>
+      </a>
+      <a href="index.html#growth-engine" class="mobile-nav-link">
+        <i class="ph-bold ph-chart-line-up"></i> <span>Solutions</span>
+      </a>
+      <a href="index.html#our-process" class="mobile-nav-link">
+        <i class="ph-bold ph-gear-six"></i> <span>Our Process</span>
+      </a>
+      <a href="index.html#case-studies" class="mobile-nav-link">
+        <i class="ph-bold ph-trophy"></i> <span>Case Studies</span>
+      </a>
+      <a href="index.html#portfolio" class="mobile-nav-link">
+        <i class="ph-bold ph-browsers"></i> <span>Portfolio</span>
+      </a>
+      <a href="about.html" class="mobile-nav-link">
+        <i class="ph-bold ph-users-three"></i> <span>About Us</span>
+      </a>
+      <a href="workshop.html" class="mobile-nav-link active">
+        <i class="ph-bold ph-chalkboard-teacher"></i> <span>Live Workshop</span>
+      </a>
+      <a href="contact.html" class="mobile-nav-link">
+        <i class="ph-bold ph-envelope"></i> <span>Contact</span>
+      </a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <a href="#register" class="btn btn-orange" style="width: 100%; height: 48px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;">
+        <span>Reserve My Seat &nbsp;→</span>
+      </a>
+      <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20have%20a%20question%20about%20the%20live%20workshop." target="_blank" class="btn btn-glass" style="width: 100%; height: 46px; justify-content: center; gap: 8px; display: flex; align-items: center;">
+        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
+        <span>Chat on WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ========================================================
+         2. HERO SECTION
+         ======================================================== -->
+    <section class="workshop-hero-section" id="workshop-hero">
+      <div class="page-shell hero-grid">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-left">
+          
+          <div class="pill-eyebrow">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>LIVE ONLINE WORKSHOP</span>
+          </div>
+
+          <h1 class="hero-h1">
+            Grow My<br>
+            <span class="text-orange">Customers</span>
+          </h1>
+
+          <p class="hero-body">
+            A 90-minute live session with Kiran Hajare on building a predictable customer acquisition system with Meta Ads — the same structure we run for clients every day.
+          </p>
+
+          <!-- Session Metadata 3-Item Row -->
+          <div class="session-meta-row">
+            
+            <div class="meta-item">
+              <div class="meta-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-calendar-blank"></i>
+              </div>
+              <div class="meta-content">
+                <span class="meta-label">Next Session</span>
+                <span class="meta-value">Sunday, 20 September 2026</span>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <div class="meta-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-clock"></i>
+              </div>
+              <div class="meta-content">
+                <span class="meta-label">Time</span>
+                <span class="meta-value">8:00 PM IST</span>
+              </div>
+            </div>
+
+            <div class="meta-item">
+              <div class="meta-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-video-camera"></i>
+              </div>
+              <div class="meta-content">
+                <span class="meta-label">Format</span>
+                <span class="meta-value">Live on Zoom · 90 min</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="following-session-text">
+            Following session: Thursday, 24 September 2026
+          </div>
+
+          <!-- Hero CTA Row -->
+          <div class="hero-cta-row">
+            <a href="#register" class="btn-reserve-pill">
+              <span>Reserve My Seat</span>
+              <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+            </a>
+            <span class="hero-microcopy">No card required · Seats are limited</span>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual / Workstation -->
+        <div class="hero-right">
+          
+          <!-- Handwritten Annotation Top-Right -->
+          <div class="handwritten-note hero-annotation-box" aria-hidden="true">
+            <div>Learn the system.</div>
+            <div>Build the flow.</div>
+            <svg class="arrow-sketch" width="34" height="38" viewBox="0 0 34 38" style="margin-left: auto; margin-top: 2px;">
+              <path d="M 26 2 Q 30 18 8 32 M 8 32 L 16 26 M 8 32 L 14 36" />
+            </svg>
+          </div>
+
+          <div class="hero-visual-container">
+            
+            <!-- Floating Meta & IG Badges -->
+            <div class="hero-meta-badges">
+              <div class="badge-meta" title="Meta Ads">
+                <i class="ph-bold ph-infinity"></i>
+              </div>
+              <div class="badge-ig" title="Instagram Ads">
+                <i class="ph-bold ph-instagram-logo"></i>
+              </div>
+            </div>
+
+            <!-- Laptop Mockup Frame -->
+            <div class="hero-laptop-frame">
+              <img src="images/workshop-dashboard.jpg" alt="Live Meta Ads Campaign Dashboard Performance command center" class="hero-laptop-img">
+            </div>
+
+            <!-- Floating Metric Stats Card Right -->
+            <div class="hero-floating-metrics">
+              <div class="metric-stat-item">
+                <span class="metric-stat-val">245K <span class="tag-green">↑ 32%</span></span>
+                <span class="metric-stat-lbl">Total Reach</span>
+              </div>
+              <div class="metric-stat-item">
+                <span class="metric-stat-val">4,892 <span class="tag-green">↑ 56%</span></span>
+                <span class="metric-stat-lbl">Leads</span>
+              </div>
+              <div class="metric-stat-item">
+                <span class="metric-stat-val">₹42 <span class="tag-green">↓ 46%</span></span>
+                <span class="metric-stat-lbl">Cost per Lead</span>
+              </div>
+            </div>
+
+            <!-- Speaker Video Inset Box -->
+            <div class="hero-speaker-inset">
+              <img src="images/kiran-hajare.jpg" alt="Kiran Hajare live workshop host" class="speaker-avatar">
+              <div>
+                <span class="speaker-badge-live">Live Session</span>
+                <div class="speaker-info-name">Kiran Hajare</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. COUNTDOWN BAR
+         ======================================================== -->
+    <section class="countdown-section" id="countdown">
+      <div class="page-shell countdown-bar-container">
+        
+        <div class="countdown-label-box">
+          <i class="ph-bold ph-alarm" aria-hidden="true"></i>
+          <span class="countdown-title">Registration closes in</span>
+        </div>
+
+        <div class="countdown-timer-group">
+          
+          <div class="timer-box">
+            <span class="timer-num" id="timer-days">01</span>
+            <span class="timer-lbl">Days</span>
+          </div>
+
+          <div class="timer-box">
+            <span class="timer-num" id="timer-hours">23</span>
+            <span class="timer-lbl">Hours</span>
+          </div>
+
+          <div class="timer-box timer-highlight">
+            <span class="timer-num" id="timer-minutes">06</span>
+            <span class="timer-lbl">Minutes</span>
+          </div>
+
+          <div class="timer-box">
+            <span class="timer-num" id="timer-seconds">12</span>
+            <span class="timer-lbl">Seconds</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. WHAT WE COVER SECTION
+         ======================================================== -->
+    <section class="what-we-cover-section" id="what-we-cover">
+      <div class="page-shell">
+        
+        <!-- Section Header -->
+        <div class="what-header-wrap">
+          <div>
+            <div class="pill-eyebrow">
+              <span>WHAT WE COVER</span>
+            </div>
+            <h2 class="section-h2" style="white-space: pre-line;">A Practical System,
+Not Just Another Ads Session</h2>
+            <p class="section-desc">
+              In 90 minutes, Kiran walks through the practical structure behind predictable Meta Ads customer acquisition.
+            </p>
+          </div>
+
+          <div class="handwritten-note what-annotation-box" aria-hidden="true">
+            <div>From strategy</div>
+            <div>to customers</div>
+            <svg class="arrow-sketch" width="32" height="36" viewBox="0 0 32 36" style="margin-left: auto; margin-top: 2px;">
+              <path d="M 6 4 Q 26 14 16 30 M 16 30 L 24 26 M 16 30 L 20 34" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 6 Cards Grid -->
+        <div class="topics-grid">
+          
+          <!-- Card 01: Blue -->
+          <article class="topic-card blue">
+            <div class="topic-header-row">
+              <span class="topic-num">01</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-target"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">The acquisition system</h3>
+            <p class="topic-desc">The three-step structure that brings customers in consistently, instead of chasing leads one by one.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+          <!-- Card 02: Orange -->
+          <article class="topic-card orange">
+            <div class="topic-header-row">
+              <span class="topic-num">02</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-megaphone"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">Campaigns that bring buyers</h3>
+            <p class="topic-desc">How to set up a Meta Ads campaign that reaches people ready to purchase — not just people who click.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+          <!-- Card 03: Purple -->
+          <article class="topic-card purple">
+            <div class="topic-header-row">
+              <span class="topic-num">03</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-pencil-simple-line"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">Offer and creative pairing</h3>
+            <p class="topic-desc">The combination of offer and creative that brings your cost per lead down and keeps it there.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+          <!-- Card 04: Green -->
+          <article class="topic-card green">
+            <div class="topic-header-row">
+              <span class="topic-num">04</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-users-three"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">Follow-up that converts</h3>
+            <p class="topic-desc">A simple follow-up flow that turns enquiries into paying customers without a large sales team.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+          <!-- Card 05: Yellow -->
+          <article class="topic-card yellow">
+            <div class="topic-header-row">
+              <span class="topic-num">05</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-chart-bar"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">Reading your numbers</h3>
+            <p class="topic-desc">Which metrics actually decide whether a campaign is working, and which ones you can safely ignore.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+          <!-- Card 06: Cyan -->
+          <article class="topic-card cyan">
+            <div class="topic-header-row">
+              <span class="topic-num">06</span>
+              <div class="topic-icon-box" aria-hidden="true">
+                <i class="ph-bold ph-chat-centered-text"></i>
+              </div>
+            </div>
+            <h3 class="topic-title">Live Q&amp;A</h3>
+            <p class="topic-desc">Bring your business and your current numbers. Kiran answers directly on the call.</p>
+            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. WHO SHOULD ATTEND SECTION
+         ======================================================== -->
+    <section class="who-should-attend-section" id="who-should-attend">
+      <div class="page-shell">
+        
+        <div class="who-header-wrap">
+          <div>
+            <div class="pill-eyebrow">
+              <span>WHO SHOULD ATTEND</span>
+            </div>
+            <h2 class="section-h2" style="margin-bottom: 0;">
+              Built For Businesses That Want Customers
+            </h2>
+          </div>
+
+          <div class="handwritten-note who-annotation-box" aria-hidden="true">
+            <div>Is this workshop</div>
+            <div>for you?</div>
+            <svg class="arrow-sketch" width="30" height="34" viewBox="0 0 30 34" style="margin-left: auto; margin-top: 2px;">
+              <path d="M 24 2 Q 28 16 8 28 M 8 28 L 16 24 M 8 28 L 14 32" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="audience-grid">
+          
+          <div class="audience-card orange">
+            <div class="audience-icon-box" aria-hidden="true">
+              <i class="ph-bold ph-storefront"></i>
+            </div>
+            <h3 class="audience-title">Business owners</h3>
+            <p class="audience-desc">Running a local or service business and wanting a steady flow of enquiries.</p>
+          </div>
+
+          <div class="audience-card purple">
+            <div class="audience-icon-box" aria-hidden="true">
+              <i class="ph-bold ph-graduation-cap"></i>
+            </div>
+            <h3 class="audience-title">Coaches &amp; consultants</h3>
+            <p class="audience-desc">Selling expertise and needing a reliable way to fill your calendar.</p>
+          </div>
+
+          <div class="audience-card blue">
+            <div class="audience-icon-box" aria-hidden="true">
+              <i class="ph-bold ph-bag"></i>
+            </div>
+            <h3 class="audience-title">D2C &amp; retail</h3>
+            <p class="audience-desc">Selling products online and wanting Meta Ads to pay for themselves.</p>
+          </div>
+
+          <div class="audience-card green">
+            <div class="audience-icon-box" aria-hidden="true">
+              <i class="ph-bold ph-briefcase"></i>
+            </div>
+            <h3 class="audience-title">Agency owners</h3>
+            <p class="audience-desc">Managing campaigns for clients and looking to sharpen your setup.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. HOST SECTION
+         ======================================================== -->
+    <section class="host-section" id="your-host">
+      <div class="page-shell">
+        
+        <div class="host-card-container">
+          
+          <!-- Host Image -->
+          <div class="host-image-wrap">
+            <img src="images/kiran-hajare.jpg" alt="Kiran Hajare - Meta Ads & Customer Acquisition Expert" class="host-img">
+            <span class="host-live-badge">LIVE WORKSHOP HOST</span>
+          </div>
+
+          <!-- Host Copy & Metrics -->
+          <div class="host-center-block">
+            <div class="host-copy-wrap">
+              <div class="pill-eyebrow" style="margin-bottom: 8px;">
+                <span>YOUR HOST</span>
+              </div>
+              <h3 class="host-name">Kiran Hajare</h3>
+              <div class="host-role">Meta Ads &amp; Customer Acquisition Expert</div>
+              <p class="host-bio">
+                Six years in Meta Ads, over 1,000 campaigns managed and more than 100 business niches served. Kiran has taught this system to 75,000+ business owners.
+              </p>
+            </div>
+
+            <!-- Proof Metrics Panel -->
+            <div class="host-stats-grid">
+              <div class="stat-item">
+                <span class="stat-val blue">6+</span>
+                <span class="stat-lbl">Years in Meta Ads</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val orange">1,000+</span>
+                <span class="stat-lbl">Campaigns Managed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val purple">100+</span>
+                <span class="stat-lbl">Business Niches</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val green">75K+</span>
+                <span class="stat-lbl">Business Owners Taught</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative Glow Quote Card (Right) -->
+          <div class="host-quote-card" aria-hidden="true">
+            <div class="quote-tagline">
+              Live. Practical.<br>No Fluff.
+            </div>
+            <div class="quote-speech-box">
+              <i class="ph-bold ph-quotes quote-icon"></i>
+              <p class="quote-text">
+                Real strategies.<br>
+                Real businesses.<br>
+                Real growth.
+              </p>
+              <div class="quote-author">— Kiran Hajare</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. REGISTRATION SECTION
+         ======================================================== -->
+    <section class="registration-section" id="register">
+      <div class="page-shell registration-grid">
+        
+        <!-- Left Value & Info -->
+        <div class="reg-left">
+          
+          <div>
+            <div class="pill-eyebrow">
+              <span>RESERVE YOUR SEAT</span>
+            </div>
+
+            <h2 class="section-h2">
+              Join the Next <span class="text-orange">Live Workshop</span>
+            </h2>
+
+            <div class="complimentary-pill">
+              <i class="ph-bold ph-ticket" aria-hidden="true"></i>
+              <span>Your Seat: Complimentary</span>
+            </div>
+
+            <p class="section-desc" style="margin-bottom: 18px;">
+              There is no fee to attend. We keep each session small so that every attendee gets an answer, and seats are limited and confirmed in order of registration.
+            </p>
+
+            <div class="reg-benefits-list">
+              <div class="benefit-item">
+                <i class="ph-bold ph-video-camera" aria-hidden="true"></i>
+                <span>Live 90-minute session with Q&amp;A</span>
+              </div>
+              <div class="benefit-item">
+                <i class="ph-bold ph-file-text" aria-hidden="true"></i>
+                <span>Workshop notes shared afterwards</span>
+              </div>
+              <div class="benefit-item">
+                <i class="ph-bold ph-whatsapp-logo" aria-hidden="true"></i>
+                <span>Joining link sent on WhatsApp and email</span>
+              </div>
+            </div>
+
+            <div class="reg-session-confirm">
+              <i class="ph-bold ph-calendar-check" aria-hidden="true"></i>
+              <span>Registering for Sunday, 20 September 2026, 8:00 PM IST</span>
+            </div>
+          </div>
+
+          <!-- Micro Zoom annotation note -->
+          <div style="position: relative; margin-top: 10px;">
+            <div class="handwritten-note" style="font-size: 1.25rem;">
+              <div>Limited seats.</div>
+              <div>Don't miss out!</div>
+              <svg class="arrow-sketch" width="30" height="26" viewBox="0 0 30 26">
+                <path d="M 4 4 Q 20 10 26 22 M 26 22 L 20 18 M 26 22 L 26 14" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Registration Form -->
+        <div class="registration-form-card">
+          
+          <form id="workshop-registration-form">
+            <div id="form-inputs-wrap">
+              <h3 class="form-title">Reserve Your Seat</h3>
+
+              <div class="form-inputs-grid">
+                
+                <div class="form-group">
+                  <label class="form-label" for="reg-name">Full Name *</label>
+                  <input type="text" id="reg-name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="reg-phone">WhatsApp Number *</label>
+                  <input type="tel" id="reg-phone" class="form-input" placeholder="Enter your WhatsApp number" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="reg-email">Email Address *</label>
+                  <input type="email" id="reg-email" class="form-input" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="reg-business">Business / What You Sell *</label>
+                  <input type="text" id="reg-business" class="form-input" placeholder="Tell us briefly about your business" required>
+                </div>
+
+              </div>
+
+              <button type="submit" id="submit-reg-btn" class="btn-submit-reg">
+                <span>Reserve My Seat</span>
+                <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+              </button>
+
+              <div class="form-legal-text">
+                By registering you agree to our <a href="terms.html">Terms</a> and <a href="privacy-policy.html">Privacy Policy</a>.
+              </div>
+            </div>
+          </form>
+
+          <!-- Success State -->
+          <div id="form-success-state" class="form-success-state">
+            <div class="success-icon-box">
+              <i class="ph-bold ph-check"></i>
+            </div>
+            <h3 class="success-title">Seat Reserved!</h3>
+            <p class="success-desc">
+              Your seat for <strong>Sunday, 20 September 2026, 8:00 PM IST</strong> is confirmed. We have sent the Zoom link details to your WhatsApp and Email.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. CLOSING BANNER
+         ======================================================== -->
+    <section class="closing-banner-section" id="closing-cta">
+      <div class="page-shell">
+        
+        <div class="closing-banner-card">
+          
+          <div class="closing-meta-pill">
+            <div class="meta-brand-badge" aria-hidden="true">
+              <i class="ph-bold ph-infinity"></i>
+            </div>
+            <div class="meta-brand-text">
+              <span class="meta-brand-title">More Customers</span>
+              <span class="meta-brand-sub">Stronger Business With Meta Ads</span>
+            </div>
+          </div>
+
+          <div class="closing-middle">
+            <h3 class="closing-h3">Ready to Grow Your Customers?</h3>
+            <p class="closing-desc">Join the live workshop and learn the same system we use for our clients.</p>
+          </div>
+
+          <div class="closing-right">
+            <a href="#register" class="btn-reserve-pill">
+              <span>Reserve My Seat</span>
+              <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <div class="handwritten-note closing-annotation" aria-hidden="true">
+              <div>Reserve My Seat</div>
+              <svg class="arrow-sketch" width="28" height="22" viewBox="0 0 28 22" style="margin-left: auto;">
+                <path d="M 22 2 Q 14 16 4 14 M 4 14 L 10 10 M 4 14 L 10 18" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       9. MULTI-COLUMN FOOTER
+       ======================================================== -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <div class="footer-brand-col">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+            <img src="images/logo.svg" alt="Sunkiran Dimex" style="width: 32px; height: 32px;">
+            <span style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; font-family: var(--font-display);">Sunkiran Dimex</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #9DAEC7; margin-bottom: 20px; line-height: 1.6;">
+            Your technology, performance marketing, and customer acquisition partner. From Code to Customers.
+          </p>
+          <div style="display: flex; gap: 14px; font-size: 1.3rem;">
+            <a href="https://facebook.com" style="color: #4D9DFF;" aria-label="Facebook"><i class="ph-bold ph-facebook-logo"></i></a>
+            <a href="https://instagram.com" style="color: #E1306C;" aria-label="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+            <a href="https://linkedin.com" style="color: #0A66C2;" aria-label="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
+            <a href="https://youtube.com" style="color: #FF0000;" aria-label="YouTube"><i class="ph-bold ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-services-col">
+          <div class="footer-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="index.html#services">Website Development</a></li>
+            <li><a href="index.html#services">Software Development</a></li>
+            <li><a href="index.html#services">E-Commerce Stores</a></li>
+            <li><a href="index.html#services">Meta &amp; Google Ads</a></li>
+            <li><a href="index.html#services">Lead Generation</a></li>
+            <li><a href="index.html#services">WhatsApp Automation</a></li>
+            <li><a href="index.html#services">CRM Integration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-company-col">
+          <div class="footer-title">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#case-studies">Case Studies</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#growth-engine">Growth Engine</a></li>
+            <li><a href="workshop.html">Live Workshop</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <div class="footer-title">Contact Us</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.88rem; color: #E6ECF5; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="ph-bold ph-phone" style="color: #4D9DFF;"></i> +91 86682 03310
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="ph-bold ph-envelope" style="color: #4D9DFF;"></i> connect@sunkirandimex.com
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="ph-bold ph-map-pin" style="color: #4D9DFF;"></i> Pune, Maharashtra, India
+            </div>
+          </div>
+
+          <div class="newsletter-box">
+            <div style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Get Growth Tips in Your Inbox</div>
+            <form id="newsletter-form" class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Sunkiran Dimex growth updates!');">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit" class="btn btn-orange" style="padding: 10px 14px; border-radius: 8px;" aria-label="Subscribe to newsletter">
+                <i class="ph-bold ph-paper-plane-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Sunkiran Dimex. All Rights Reserved.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+          <span class="footer-legal-divider" aria-hidden="true">•</span>
+          <a href="refund-policy.html" class="footer-legal-link">Refund Policy</a>
+          <span class="footer-legal-divider" aria-hidden="true">•</span>
+          <a href="terms.html" class="footer-legal-link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20have%20a%20question%20about%20the%20live%20workshop." target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+    <i class="ph-bold ph-whatsapp-logo"></i>
+    <span class="floating-whatsapp-tooltip">💬 Chat with us</span>
+  </a>
+
+  <!-- Page Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/workshop.js"></script>
+</body>
+</html>
