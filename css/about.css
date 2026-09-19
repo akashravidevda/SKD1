@@ -1368,16 +1368,6 @@ section {
   color: var(--text-muted);
 }
 
-/* Mobile-Only Section Divider */
-.section-divider-mobile {
-  display: none;
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(45, 126, 214, 0.35) 50%, transparent 100%);
-  width: min(90%, 540px);
-  margin: 0 auto;
-}
-
 /* Footer CTA */
 .footer-cta-section {
   background-color: var(--bg-primary);
@@ -1645,10 +1635,6 @@ section {
   }
   .commitment-section {
     padding-top: clamp(60px, 8vw, 90px);
-  }
-  .section-divider-mobile {
-    display: block;
-    margin: 32px auto 44px auto;
   }
   .hero-facts-row {
     flex-direction: column;
