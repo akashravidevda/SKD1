@@ -3,7 +3,7 @@
    Dark Performance-Marketing Aesthetic & GSAP-Ready Motion Layout
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
 
 :root {
   /* Core Color Tokens */
@@ -38,7 +38,7 @@
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  --font-handwriting: 'Caveat', cursive, sans-serif;
+  --font-handwriting: var(--font-sans); /* Caveat removed */
 
   /* Radius Scales */
   --radius-xs: 6px;
@@ -152,37 +152,39 @@ img, svg {
   filter: blur(120px);
   z-index: 0;
   opacity: 0.6;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .glow-hero-blue {
-  width: 600px;
+  width: min(600px, 85vw);
   height: 450px;
   top: 2%;
-  left: 10%;
+  left: 5%;
   background: radial-gradient(circle, rgba(24, 93, 255, 0.25) 0%, rgba(17, 200, 255, 0.1) 45%, transparent 70%);
 }
 
 .glow-hero-cyan {
-  width: 450px;
+  width: min(450px, 75vw);
   height: 350px;
   top: 15%;
-  right: 5%;
+  right: 0%;
   background: radial-gradient(circle, rgba(9, 195, 255, 0.18) 0%, transparent 65%);
 }
 
 .glow-form-purple {
-  width: 550px;
+  width: min(550px, 80vw);
   height: 450px;
   top: 40%;
-  right: 10%;
+  right: 0%;
   background: radial-gradient(circle, rgba(143, 70, 255, 0.15) 0%, transparent 70%);
 }
 
 .glow-bottom-orange {
-  width: 500px;
+  width: min(500px, 75vw);
   height: 350px;
   bottom: 8%;
-  left: 15%;
+  left: 5%;
   background: radial-gradient(circle, rgba(255, 106, 61, 0.14) 0%, transparent 70%);
 }
 
@@ -1311,23 +1313,7 @@ img, svg {
 }
 
 .floating-whatsapp-tooltip {
-  position: absolute;
-  right: 62px;
-  background: rgba(0, 14, 37, 0.92);
-  color: #FFFFFF;
-  border: 1px solid rgba(37, 211, 102, 0.6);
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-fast);
-}
-
-.floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
-  opacity: 1;
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1358,8 +1344,50 @@ img, svg {
 }
 
 @media (max-width: 767px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100%;
+  }
+
+  section {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .contact-ambient-glow {
+    filter: blur(60px);
+    opacity: 0.4;
+    width: clamp(200px, 70vw, 320px) !important;
+    height: clamp(160px, 50vw, 240px) !important;
+    max-width: 90vw;
+  }
+
+  .glow-hero-blue { top: 2%; left: 0 !important; }
+  .glow-hero-cyan { top: 15%; right: 0 !important; }
+  .glow-form-purple { top: 40%; right: 0 !important; }
+  .glow-bottom-orange { bottom: 5%; left: 0 !important; }
+
   .hero-h1 {
     font-size: 30px;
+  }
+
+  .form-panel-card {
+    padding: 22px 16px !important;
+  }
+
+  /* Prevent iOS Safari auto-zoom on input focus */
+  .styled-input,
+  .styled-textarea {
+    font-size: 16px !important;
+  }
+
+  .topic-chip {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .form-row-2col {
@@ -1369,7 +1397,6 @@ img, svg {
   .service-selector-grid {
     grid-template-columns: 1fr;
   }
-
 
   .footer-grid {
     grid-template-columns: 1fr;

@@ -216,6 +216,8 @@ function initScrollReveals() {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isMobile = window.innerWidth <= 768;
+
     // Hero entrance
     const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
     heroTl
@@ -226,7 +228,7 @@ function initScrollReveals() {
       .from('.fact-card', { opacity: 0, y: 20, stagger: 0.12, duration: 0.6 }, '-=0.3')
       .from('.hero-right', { opacity: 0, scale: 0.95, duration: 0.9 }, '-=0.8')
       .from('.floating-meta-badge', { opacity: 0, scale: 0.8, duration: 0.6 }, '-=0.4')
-      .from('.floating-metrics-card', { opacity: 0, x: 30, duration: 0.6 }, '-=0.4')
+      .from('.floating-metrics-card', { opacity: 0, x: isMobile ? 0 : 30, y: isMobile ? 20 : 0, duration: 0.6 }, '-=0.4')
       .from('.hero-annotation-wrap', { opacity: 0, y: -15, duration: 0.6 }, '-=0.3');
 
     // Who We Are entrance
@@ -236,7 +238,8 @@ function initScrollReveals() {
         start: 'top 75%',
       },
       opacity: 0,
-      x: -40,
+      x: isMobile ? 0 : -40,
+      y: isMobile ? 30 : 0,
       duration: 0.9,
       ease: 'power3.out'
     });
@@ -247,7 +250,8 @@ function initScrollReveals() {
         start: 'top 75%',
       },
       opacity: 0,
-      x: 40,
+      x: isMobile ? 0 : 40,
+      y: isMobile ? 30 : 0,
       duration: 0.9,
       ease: 'power3.out'
     });

@@ -1,7 +1,7 @@
 /* ==========================================================================
    Sunkiran Dimex - About Page Stylesheet
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
 
 :root {
   --bg-primary: #030B18;
@@ -36,7 +36,7 @@
 
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  --font-handwriting: 'Caveat', cursive, sans-serif;
+  --font-handwriting: var(--font-sans); /* Caveat removed */
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -109,7 +109,7 @@ img, svg {
 .text-blue { color: var(--accent-blue); }
 .text-teal { color: var(--accent-teal); }
 .text-muted { color: var(--text-muted); }
-.font-handwriting { font-family: var(--font-handwriting); }
+.font-handwriting { display: none !important; }
 
 .page-shell {
   width: 100%;
@@ -132,10 +132,12 @@ img, svg {
   filter: blur(120px);
   z-index: 0;
   opacity: 0.65;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .ambient-hero-blue {
-  width: 700px;
+  width: min(700px, 90vw);
   height: 500px;
   top: 5%;
   right: 5%;
@@ -143,7 +145,7 @@ img, svg {
 }
 
 .ambient-hero-purple {
-  width: 500px;
+  width: min(500px, 80vw);
   height: 400px;
   top: 15%;
   right: 25%;
@@ -151,7 +153,7 @@ img, svg {
 }
 
 .ambient-who-blue {
-  width: 550px;
+  width: min(550px, 85vw);
   height: 450px;
   top: 50%;
   left: 2%;
@@ -159,7 +161,7 @@ img, svg {
 }
 
 .ambient-footer-orange {
-  width: 450px;
+  width: min(450px, 80vw);
   height: 350px;
   bottom: 5%;
   right: 15%;
@@ -252,6 +254,8 @@ section {
   position: relative;
   padding: var(--section-padding) 0;
   z-index: 1;
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 .pill-eyebrow {
@@ -292,23 +296,13 @@ section {
   margin-bottom: 22px;
 }
 
+/* Handwritten annotations — hidden for professional look */
 .handwritten-annotation {
-  font-family: var(--font-handwriting);
-  color: #E2EEFF;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-  position: absolute;
-  pointer-events: none;
-  z-index: 10;
-  user-select: none;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  display: none !important;
 }
 
 .handwritten-annotation svg.arrow-sketch {
-  overflow: visible;
-  stroke: #C9DEFF;
-  stroke-width: 1.8;
-  fill: none;
+  display: none !important;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -659,12 +653,73 @@ section {
   flex-direction: column;
   gap: 22px;
   max-width: 640px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .who-paragraphs p {
-  font-size: clamp(0.98rem, 1.1vw, 1.06rem);
   color: var(--text-secondary);
+  font-size: 1.05rem;
   line-height: 1.75;
+}
+
+.who-bullets {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.who-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.who-bullet-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(22, 140, 255, 0.15);
+  border: 1px solid rgba(45, 126, 214, 0.4);
+  color: var(--electric-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.who-partnership-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  background: rgba(6, 22, 48, 0.92);
+  border: 1px solid rgba(45, 126, 214, 0.5);
+  backdrop-filter: blur(12px);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: floatSlowAlt 4s ease-in-out infinite alternate;
+}
+
+.who-badge-icon {
+  color: var(--accent-orange);
+  font-size: 1.15rem;
+}
+
+.who-badge-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FFFFFF;
 }
 
 /* ==========================================================================
@@ -698,18 +753,20 @@ section {
   filter: blur(80px);
   pointer-events: none;
   z-index: 1;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .glow-blue-left {
-  width: 480px;
+  width: min(480px, 80vw);
   height: 480px;
-  left: -100px;
+  left: -50px;
   top: 20%;
   background: radial-gradient(circle, rgba(22, 140, 255, 0.24) 0%, transparent 70%);
 }
 
 .glow-orange-bottom {
-  width: 360px;
+  width: min(360px, 70vw);
   height: 360px;
   left: 5%;
   bottom: -60px;
@@ -717,9 +774,9 @@ section {
 }
 
 .glow-blue-topright {
-  width: 400px;
+  width: min(400px, 75vw);
   height: 400px;
-  right: -80px;
+  right: -40px;
   top: 10%;
   background: radial-gradient(circle, rgba(43, 107, 255, 0.14) 0%, transparent 70%);
 }
@@ -882,19 +939,9 @@ section {
   letter-spacing: -0.01em;
 }
 
-/* Left Handwritten Annotation */
+/* Left Handwritten Annotation — hidden */
 .founder-left-annotation {
-  position: absolute;
-  left: -28px;
-  bottom: 60px;
-  z-index: 12;
-  font-family: var(--font-handwriting);
-  font-size: 1.3rem;
-  line-height: 1.15;
-  color: #FFFFFF;
-  text-align: right;
-  transform: rotate(-8deg);
-  pointer-events: none;
+  display: none !important;
 }
 
 /* --- Right Column: Content & Metrics --- */
@@ -914,22 +961,9 @@ section {
   width: 100%;
 }
 
+/* Right Handwritten Annotation — hidden */
 .founder-right-annotation {
-  position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto;
-  margin-left: auto;
-  font-family: var(--font-handwriting);
-  font-size: 1.25rem;
-  line-height: 1.15;
-  color: #BEE0FF;
-  text-align: right;
-  transform: rotate(-5deg);
-  white-space: nowrap;
-  pointer-events: none;
-  flex-shrink: 0;
+  display: none !important;
 }
 
 .founders-h2 {
@@ -1455,26 +1489,7 @@ section {
 }
 
 .floating-whatsapp-tooltip {
-  position: absolute;
-  right: 68px;
-  background: rgba(3, 11, 24, 0.95);
-  border: 1px solid rgba(45, 126, 214, 0.4);
-  color: #FFFFFF;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.floating-whatsapp-btn:hover .floating-whatsapp-tooltip {
-  opacity: 1;
-  transform: translateX(0);
+  display: none !important;
 }
 
 /* Responsive */
@@ -1590,6 +1605,17 @@ section {
 
 @media (max-width: 767px) {
   :root { --section-padding: 72px 0; }
+  .ambient-glow {
+    filter: blur(60px);
+    opacity: 0.45;
+    width: clamp(220px, 75vw, 340px) !important;
+    height: clamp(180px, 55vw, 260px) !important;
+    max-width: 90vw;
+  }
+  .ambient-hero-blue { top: 2%; right: 0; left: auto; }
+  .ambient-hero-purple { top: 12%; right: 0; left: auto; }
+  .ambient-who-blue { top: 45%; left: 0; right: auto; }
+  .ambient-footer-orange { bottom: 2%; right: 0; left: auto; }
   .hero-right { margin-top: 40px; }
   .hero-h1 { font-size: 42px; }
   .section-h2 { font-size: 34px; }

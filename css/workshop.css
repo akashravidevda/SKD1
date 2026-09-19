@@ -4,7 +4,7 @@
    Full-Width 1400px Scaling & Header Clearance
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
 
 :root {
   /* Colors */
@@ -38,7 +38,7 @@
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
-  --font-handwriting: 'Caveat', cursive, sans-serif;
+  --font-handwriting: var(--font-sans); /* Caveat removed */
 
   /* Radius */
   --radius-sm: 8px;
@@ -122,7 +122,7 @@ img, svg {
 .text-muted { color: var(--text-muted); }
 
 .font-handwriting {
-  font-family: var(--font-handwriting);
+  display: none !important;
 }
 
 /* Page Shell */
@@ -148,37 +148,39 @@ img, svg {
   filter: blur(100px);
   z-index: 0;
   opacity: 0.65;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .glow-hero-blue {
-  width: 600px;
+  width: min(600px, 85vw);
   height: 450px;
   top: 4%;
-  right: 8%;
+  right: 5%;
   background: radial-gradient(circle, rgba(24, 93, 255, 0.28) 0%, rgba(17, 200, 255, 0.12) 40%, transparent 70%);
 }
 
 .glow-hero-cyan {
-  width: 400px;
+  width: min(400px, 75vw);
   height: 350px;
   top: 18%;
-  right: 2%;
+  right: 0%;
   background: radial-gradient(circle, rgba(9, 195, 255, 0.16) 0%, transparent 65%);
 }
 
 .glow-middle-purple {
-  width: 500px;
+  width: min(500px, 80vw);
   height: 400px;
   top: 45%;
-  left: 5%;
+  left: 0%;
   background: radial-gradient(circle, rgba(143, 70, 255, 0.14) 0%, transparent 70%);
 }
 
 .glow-footer-orange {
-  width: 450px;
+  width: min(450px, 75vw);
   height: 300px;
   bottom: 8%;
-  right: 15%;
+  right: 5%;
   background: radial-gradient(circle, rgba(255, 106, 61, 0.15) 0%, transparent 70%);
 }
 
@@ -219,6 +221,8 @@ section {
   position: relative;
   padding: 48px 0;
   z-index: 1;
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 .pill-eyebrow {
@@ -272,24 +276,13 @@ section {
   max-width: 640px;
 }
 
-/* Handwritten Annotations */
+/* Handwritten annotations — hidden for professional look */
 .handwritten-note {
-  font-family: var(--font-handwriting);
-  color: #BCD2EB;
-  line-height: 1.15;
-  position: absolute;
-  pointer-events: none;
-  z-index: 10;
-  user-select: none;
+  display: none !important;
 }
 
 .handwritten-note svg.arrow-sketch {
-  overflow: visible;
-  stroke: #BCD2EB;
-  stroke-width: 1.6;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -542,11 +535,12 @@ section {
 }
 
 .speaker-avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 1px solid rgba(255, 106, 61, 0.5);
+  border: 1.5px solid rgba(255, 106, 61, 0.75);
+  box-shadow: 0 0 10px rgba(255, 106, 61, 0.3);
 }
 
 .speaker-badge-live {
@@ -988,12 +982,15 @@ section {
   gap: 12px;
 }
 
+/* Quote tagline — converted from handwriting to clean sans */
 .quote-tagline {
-  font-family: var(--font-handwriting);
-  font-size: 1.35rem;
-  color: #BCD2EB;
-  line-height: 1.15;
-  transform: rotate(-3deg);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(188, 210, 235, 0.65);
+  line-height: 1.4;
   text-align: left;
 }
 
@@ -1377,9 +1374,18 @@ section {
 
   .closing-banner-card {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     border-radius: var(--radius-lg);
-    padding: 24px;
+    padding: 28px 24px 24px;
+    gap: 16px;
+  }
+
+  .closing-right {
+    width: 100%;
+    position: relative;
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .hero-floating-metrics {
@@ -1399,6 +1405,45 @@ section {
 
 /* 767px Mobile Devices */
 @media (max-width: 767px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100%;
+  }
+
+  section {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .workshop-ambient-glow {
+    filter: blur(50px);
+    opacity: 0.4;
+    width: clamp(200px, 70vw, 320px) !important;
+    height: clamp(160px, 50vw, 240px) !important;
+    max-width: 90vw;
+  }
+
+  .glow-hero-blue { top: 2%; right: 0 !important; }
+  .glow-hero-cyan { top: 15%; right: 0 !important; }
+  .glow-middle-purple { top: 40%; left: 0 !important; }
+  .glow-footer-orange { bottom: 5%; right: 0 !important; }
+
+  /* Input fields prevent iOS auto zoom */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    font-size: 16px !important;
+  }
+
+  .registration-form-card {
+    padding: 24px 18px !important;
+  }
+
   .hero-h1 { font-size: 38px; }
   .section-h2 { font-size: 28px; }
 
@@ -1490,9 +1535,14 @@ section {
   }
 
   .closing-annotation {
-    right: 12px;
-    top: -24px;
+    position: absolute;
+    right: 6px;
+    top: -30px;
     font-size: 1.15rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
@@ -1504,6 +1554,12 @@ section {
   .btn-submit-reg, .btn-reserve-pill {
     width: 100%;
     justify-content: center;
+  }
+
+  .closing-right {
+    width: 100%;
+    margin-top: 28px;
+    position: relative;
   }
 
   .hero-floating-metrics {
@@ -1553,9 +1609,14 @@ section {
   }
 
   .closing-annotation {
-    right: 16px;
-    top: -22px;
-    font-size: 1.05rem;
+    position: absolute;
+    right: 8px;
+    top: -28px;
+    font-size: 1.08rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
