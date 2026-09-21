@@ -4503,82 +4503,6 @@ section[id],
   scroll-margin-top: 110px;
 }
 
-/* ========================================================
-   MOBILE QUICK NAVIGATION BAR (Zero-Scroll Instant Access)
-   ======================================================== */
-.mobile-quick-nav {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-quick-nav {
-    display: block;
-    position: sticky;
-    top: 64px;
-    z-index: 95;
-    background: rgba(5, 11, 24, 0.94);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(115, 160, 230, 0.16);
-    border-bottom: 1px solid rgba(115, 160, 230, 0.16);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-    margin: 0;
-    padding: 8px 0;
-    width: 100%;
-  }
-
-  .mobile-quick-nav-track {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 2px 16px;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .mobile-quick-nav-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  .quick-nav-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    font-size: 0.78rem;
-    font-weight: 650;
-    color: #CAD5E2;
-    background: rgba(13, 31, 60, 0.65);
-    border: 1px solid rgba(115, 160, 230, 0.22);
-    padding: 7px 13px;
-    border-radius: var(--radius-pill);
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .quick-nav-pill:active,
-  .quick-nav-pill:hover {
-    background: rgba(26, 54, 98, 0.9);
-    border-color: #4D9DFF;
-    color: #FFFFFF;
-  }
-
-  .quick-nav-pill-highlight {
-    background: rgba(255, 106, 0, 0.16);
-    border-color: rgba(255, 106, 0, 0.45);
-    color: #FFA552;
-  }
-
-  .quick-nav-pill-highlight:active,
-  .quick-nav-pill-highlight:hover {
-    background: #FF6A00;
-    color: #FFFFFF;
-  }
 
   .header-sticky {
     height: 64px;
@@ -5351,16 +5275,6 @@ section[id],
     height: 32px !important;
   }
 
-  /* Quick-Nav Bar */
-  .mobile-quick-nav {
-    padding: 5px 12px 10px !important;
-    gap: 6px !important;
-  }
-
-  .quick-nav-pill {
-    padding: 6px 10px !important;
-    font-size: 0.74rem !important;
-  }
 
   /* Hero Section */
   .hero-section {
