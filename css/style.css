@@ -4456,11 +4456,14 @@ svg {
 .footer-links a {
   color: #9DAEC7;
   font-size: 0.9rem;
+  display: inline-block;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
 }
 
 .footer-links a:hover {
   color: #5DA6FF;
-  padding-left: 4px;
+  transform: translateX(4px);
 }
 
 .newsletter-box {
