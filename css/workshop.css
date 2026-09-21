@@ -2147,6 +2147,44 @@ section {
   }
 }
 
+/* ========================================================
+   ULTRA-COMPACT MOBILE BREAKPOINTS (<= 360px & <= 335px)
+   ======================================================== */
+@media (max-width: 360px) {
+  .page-shell,
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .session-meta-strip {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  .meta-pill {
+    padding: 6px 10px !important;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 8vw, 2.1rem) !important;
+  }
+
+  .btn-reserve-pill {
+    width: 100% !important;
+    justify-content: center !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+    font-size: 0.88rem !important;
+  }
+
+  .hero-floating-metrics {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 10px !important;
+  }
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

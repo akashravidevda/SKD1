@@ -365,32 +365,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 14. Portfolio Category Filter
+  // 14. Portfolio Category Filter (Smooth Two-Phase Staggered Transition)
   const portfolioFilterBtns = document.querySelectorAll('.portfolio-filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const portfolioGrid = document.querySelector('.portfolio-grid');
+
   if (portfolioFilterBtns.length && portfolioCards.length) {
+    let isFiltering = false;
+
     portfolioFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
+        if (btn.classList.contains('active') || isFiltering) return;
+
         portfolioFilterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
 
+        // On mobile, smoothly center the clicked tab in the swipeable track
+        if (window.innerWidth <= 768) {
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+
+        const filter = btn.getAttribute('data-filter');
+        isFiltering = true;
+
+        // Stabilize grid height to prevent viewport jitter during card transitions
+        if (portfolioGrid) {
+          portfolioGrid.style.minHeight = portfolioGrid.offsetHeight + 'px';
+        }
+
+        // Phase 1: Smooth fade and subtle scale exit
         portfolioCards.forEach(card => {
-          const category = card.getAttribute('data-category') || '';
-          if (filter === 'all' || category.includes(filter)) {
-            card.style.display = 'flex';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 10);
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(10px)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 250);
-          }
+          card.style.transition = 'opacity 0.16s ease, transform 0.16s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96) translateY(6px)';
         });
+
+        // Phase 2: Switch display state & Staggered Reveal
+        setTimeout(() => {
+          let visibleIndex = 0;
+          portfolioCards.forEach(card => {
+            const category = card.getAttribute('data-category') || '';
+            const matches = (filter === 'all' || category.includes(filter));
+
+            if (matches) {
+              card.style.display = 'flex';
+              // Force reflow for silky CSS transition
+              void card.offsetWidth;
+              const delay = visibleIndex * 45; // 45ms cascade stagger
+              visibleIndex++;
+
+              card.style.transition = `opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, border-color 0.25s ease, box-shadow 0.25s ease`;
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1) translateY(0)';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Smoothly release grid height lock
+          setTimeout(() => {
+            if (portfolioGrid) {
+              portfolioGrid.style.minHeight = '';
+            }
+            isFiltering = false;
+          }, Math.max(300, visibleIndex * 45 + 320));
+        }, 170);
       });
     });
   }

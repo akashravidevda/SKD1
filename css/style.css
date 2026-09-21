@@ -47,8 +47,6 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  max-width: 100vw;
   width: 100%;
 }
 
@@ -57,12 +55,13 @@ body {
   background-color: var(--bg-primary);
   color: var(--primary-text);
   line-height: 1.6;
-  overflow-x: hidden;
-  max-width: 100vw;
   width: 100%;
+  min-height: 100%;
   position: relative;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -831,26 +830,39 @@ svg {
 .hero-cta-row {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
+  gap: 14px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
 }
 
 .hero-cta-primary {
-  min-width: 290px;
-  height: 58px;
-  font-size: 1.05rem;
+  min-width: auto;
+  height: 54px;
+  padding: 0 26px;
+  font-size: 1rem;
   font-weight: 750;
-  border-radius: 16px;
+  border-radius: 14px;
   background: #FF6508;
   box-shadow: 0 12px 35px rgba(255, 100, 0, 0.32);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
 }
 
 .hero-cta-secondary {
-  min-width: 230px;
-  height: 58px;
-  font-size: 1.02rem;
+  min-width: auto;
+  height: 54px;
+  padding: 0 22px;
+  font-size: 0.96rem;
   font-weight: 650;
-  border-radius: 16px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 /* Trust Section */
@@ -896,6 +908,40 @@ svg {
   align-items: center;
   gap: 8px;
   margin-top: 2px;
+}
+
+.hero-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.hero-trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #8BA6C9;
+  background: rgba(13, 31, 60, 0.45);
+  border: 1px solid rgba(115, 160, 230, 0.16);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.hero-trust-chip:hover {
+  background: rgba(26, 54, 98, 0.6);
+  border-color: rgba(77, 157, 255, 0.35);
+  color: #E2E8F0;
+}
+
+.hero-trust-chip i {
+  color: #4D9DFF;
+  font-size: 0.88rem;
 }
 
 .stars-rating {
@@ -4443,9 +4489,99 @@ svg {
 }
 
 /* Mobile Devices (375px - 768px) */
+/* ========================================================
+   GLOBAL SECTION SCROLL MARGINS FOR SEAMLESS QUICK JUMP
+   ======================================================== */
+section[id],
+.section,
+.hero-section,
+.unified-advantage-section,
+.process-section,
+.csi-section,
+.portfolio-section,
+.final-cta-section {
+  scroll-margin-top: 110px;
+}
+
+/* ========================================================
+   MOBILE QUICK NAVIGATION BAR (Zero-Scroll Instant Access)
+   ======================================================== */
+.mobile-quick-nav {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobile-quick-nav {
+    display: block;
+    position: sticky;
+    top: 64px;
+    z-index: 95;
+    background: rgba(5, 11, 24, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(115, 160, 230, 0.16);
+    border-bottom: 1px solid rgba(115, 160, 230, 0.16);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    margin: 0;
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .mobile-quick-nav-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 16px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mobile-quick-nav-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quick-nav-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    font-size: 0.78rem;
+    font-weight: 650;
+    color: #CAD5E2;
+    background: rgba(13, 31, 60, 0.65);
+    border: 1px solid rgba(115, 160, 230, 0.22);
+    padding: 7px 13px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .quick-nav-pill:active,
+  .quick-nav-pill:hover {
+    background: rgba(26, 54, 98, 0.9);
+    border-color: #4D9DFF;
+    color: #FFFFFF;
+  }
+
+  .quick-nav-pill-highlight {
+    background: rgba(255, 106, 0, 0.16);
+    border-color: rgba(255, 106, 0, 0.45);
+    color: #FFA552;
+  }
+
+  .quick-nav-pill-highlight:active,
+  .quick-nav-pill-highlight:hover {
+    background: #FF6A00;
+    color: #FFFFFF;
+  }
+
   .header-sticky {
-    height: 68px;
+    height: 64px;
   }
 
   .brand-title {
@@ -4453,13 +4589,48 @@ svg {
   }
 
   .brand-icon-box {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .hero-section {
-    padding-top: 86px;
-    padding-bottom: 30px;
+    padding-top: 76px !important;
+    padding-bottom: 24px !important;
+    min-height: auto;
+  }
+
+  .section,
+  .unified-advantage-section,
+  .process-section,
+  .csi-section,
+  .portfolio-section,
+  .final-cta-section {
+    padding: 44px 0 36px !important;
+  }
+
+  .section-header,
+  .ua-section-header,
+  .process-header,
+  .csi-section-header {
+    margin-bottom: 24px !important;
+  }
+
+  .section-title,
+  .ua-section-title,
+  .process-title,
+  .csi-title {
+    font-size: clamp(1.6rem, 6.5vw, 2.1rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-subtitle,
+  .ua-section-subtitle,
+  .process-subtitle,
+  .csi-subtitle {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
   }
 
   /* Modal responsive refinement */
@@ -4482,37 +4653,38 @@ svg {
   }
 
   .eyebrow-pill {
-    font-size: 0.8rem;
-    padding: 6px 14px;
+    font-size: 0.76rem;
+    padding: 5px 12px;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .hero-headline {
-    font-size: clamp(2.3rem, 9vw, 3.2rem);
-    letter-spacing: -1.8px;
-    line-height: 1.02;
-    margin-bottom: 16px;
+    font-size: clamp(2rem, 7.5vw, 2.55rem);
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 12px;
   }
 
   .hero-description {
-    font-size: 1.02rem;
-    line-height: 1.5;
-    margin-bottom: 22px;
+    font-size: 0.94rem;
+    line-height: 1.45;
+    margin-bottom: 16px;
   }
 
   .service-pills-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .service-pill-item {
     justify-content: center;
-    padding: 8px 10px;
-    font-size: 0.82rem;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 6px;
   }
 
   .pill-sep {
@@ -4520,42 +4692,74 @@ svg {
   }
 
   .hero-cta-row {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 18px;
   }
 
-  .hero-cta-primary,
-  .hero-cta-secondary {
+  .hero-cta-primary {
     width: 100%;
-    min-width: 100%;
+    min-width: 0;
     height: 52px;
     font-size: 0.98rem;
+    font-weight: 750;
+    padding: 0 20px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  .hero-cta-secondary {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    font-size: 0.92rem;
+    font-weight: 650;
+    padding: 0 18px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
   }
 
   .hero-trust-box {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .hero-trust-chips {
+    gap: 6px;
+  }
+
+  .hero-trust-chip {
+    font-size: 0.72rem;
+    padding: 3px 8px;
   }
 
   .avatar-stack img {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
   .trust-title {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
   }
 
   .trust-subtext {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
   }
 
   .hero-right-stage {
-    margin-top: 20px;
+    margin-top: 14px;
     width: 100%;
     position: relative;
     display: flex;
@@ -4563,72 +4767,78 @@ svg {
   }
 
   .analytics-dashboard-card {
-    padding: 20px 16px;
-    border-radius: 20px;
+    padding: 16px 14px;
+    border-radius: 18px;
     width: 100%;
   }
 
   .sticky-note-badge {
     display: block;
     position: absolute;
-    top: -12px;
-    right: 6px;
-    font-size: 0.86rem;
-    padding: 7px 11px;
+    top: -10px;
+    right: 4px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
     border-radius: 6px;
     line-height: 1.3;
     z-index: 22;
   }
 
   .pushpin {
-    width: 10px;
-    height: 10px;
-    top: -5px;
+    width: 9px;
+    height: 9px;
+    top: -4px;
+  }
+
+  .metric-summary-card {
+    padding: 12px 14px;
+    border-radius: 14px;
+    margin-bottom: 12px;
   }
 
   .metric-counter-val {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
   }
 
   .coffee-strategy-badge {
     position: absolute;
-    bottom: -16px;
+    bottom: -14px;
     left: 8px;
-    font-size: 0.78rem;
-    padding: 6px 12px;
+    font-size: 0.74rem;
+    padding: 5px 10px;
   }
 
   .live-lead-pill {
     position: static;
-    margin-top: 14px;
+    margin-top: 10px;
     width: 100%;
     justify-content: center;
     text-align: center;
-    font-size: 0.82rem;
-    padding: 8px 14px;
+    font-size: 0.78rem;
+    padding: 6px 12px;
   }
 
   .bottom-metrics-bar {
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    padding: 18px 14px;
-    border-radius: 18px;
-    margin-top: 24px;
+    gap: 10px;
+    padding: 14px 12px;
+    border-radius: 16px;
+    margin-top: 16px;
   }
 
   .metrics-bar-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.15rem;
-    border-radius: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+    border-radius: 9px;
   }
 
   .metrics-bar-num {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 
   .metrics-bar-lbl {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
   .metrics-bar-message {
@@ -4638,7 +4848,7 @@ svg {
   }
 
   .metrics-bar-message .handwritten {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
 
   .grid-2,
@@ -4809,6 +5019,8 @@ svg {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  transition: min-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
 .portfolio-card {
@@ -4819,10 +5031,16 @@ svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  will-change: opacity, transform;
+  transform-origin: center center;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .portfolio-card:hover {
@@ -5029,21 +5247,46 @@ svg {
   }
 }
 
+@media (max-width: 768px) {
+  .portfolio-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 20px -16px 36px -16px;
+    padding: 6px 16px 14px 16px;
+    gap: 8px;
+  }
+
+  .portfolio-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    font-size: 0.82rem;
+    padding: 8px 16px;
+  }
+}
+
 @media (max-width: 640px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-filter-bar {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
+  .hero-trust-chips {
+    gap: 6px;
   }
 
-  .portfolio-filter-btn {
-    white-space: nowrap;
+  .hero-trust-chip {
+    font-size: 0.72rem;
+    padding: 3px 8px;
   }
 
   .faq-question-btn {
@@ -5057,5 +5300,262 @@ svg {
 
   .faq-item.active .faq-answer-body {
     padding: 0 18px 18px;
+  }
+}
+
+/* ========================================================
+   ULTRA-COMPACT MOBILE BREAKPOINTS (<= 360px & <= 335px)
+   ======================================================== */
+@media (max-width: 360px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container,
+  .page-shell {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Header & Navigation */
+  .header-sticky {
+    height: 58px !important;
+  }
+
+  .header-sticky .nav-container {
+    padding: 0 12px !important;
+  }
+
+  .brand-title {
+    font-size: 1.02rem !important;
+  }
+
+  .brand-tagline {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .brand-icon-box {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* Quick-Nav Bar */
+  .mobile-quick-nav {
+    padding: 5px 12px 10px !important;
+    gap: 6px !important;
+  }
+
+  .quick-nav-pill {
+    padding: 6px 10px !important;
+    font-size: 0.74rem !important;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: 68px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .eyebrow-pill {
+    font-size: 0.68rem !important;
+    padding: 4px 10px !important;
+    gap: 5px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.7rem, 8.2vw, 2.1rem) !important;
+    letter-spacing: -0.8px !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-description {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .service-pills-row {
+    gap: 5px !important;
+  }
+
+  .service-pill-item {
+    font-size: 0.72rem !important;
+    padding: 5px 8px !important;
+    gap: 5px !important;
+  }
+
+  /* Hero CTAs on 331px */
+  .hero-cta-row {
+    gap: 8px !important;
+  }
+
+  .hero-cta-primary {
+    height: 50px !important;
+    font-size: 0.88rem !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
+  }
+
+  .hero-cta-primary i {
+    font-size: 1.05rem !important;
+  }
+
+  .hero-cta-secondary {
+    height: 46px !important;
+    font-size: 0.84rem !important;
+    padding: 0 12px !important;
+    gap: 6px !important;
+  }
+
+  .hero-cta-secondary i {
+    font-size: 1.15rem !important;
+  }
+
+  /* Trust Indicators */
+  .hero-trust-box {
+    gap: 8px !important;
+  }
+
+  .trust-title {
+    font-size: 0.8rem !important;
+  }
+
+  .hero-trust-chips {
+    gap: 4px !important;
+  }
+
+  .hero-trust-chip {
+    font-size: 0.66rem !important;
+    padding: 2px 6px !important;
+  }
+
+  /* Dashboard Mockup */
+  .analytics-dashboard-card {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .metric-summary-card {
+    padding: 10px 10px !important;
+  }
+
+  .metric-counter-val {
+    font-size: 1.55rem !important;
+  }
+
+  .bottom-metrics-bar {
+    padding: 10px 8px !important;
+    gap: 8px !important;
+  }
+
+  .metrics-bar-num {
+    font-size: 1.05rem !important;
+  }
+
+  .metrics-bar-lbl {
+    font-size: 0.64rem !important;
+  }
+
+  /* Unified Advantage & Process */
+  .ua-card,
+  .process-card,
+  .csi-card,
+  .portfolio-card {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .section-title,
+  .ua-section-title,
+  .process-title,
+  .csi-title {
+    font-size: clamp(1.45rem, 7vw, 1.8rem) !important;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .industry-pill-item {
+    padding: 10px 12px !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Portfolio Filter */
+  .portfolio-filter-bar {
+    margin: 16px -12px 24px -12px !important;
+    padding: 4px 12px 10px 12px !important;
+    gap: 6px !important;
+  }
+
+  .portfolio-filter-btn {
+    font-size: 0.76rem !important;
+    padding: 6px 12px !important;
+  }
+
+  /* Modals */
+  .modal-container {
+    width: calc(100vw - 16px) !important;
+    padding: 18px 12px !important;
+    margin: 6px auto !important;
+    border-radius: 14px !important;
+  }
+
+  .modal-title {
+    font-size: 1.18rem !important;
+  }
+
+  .modal-input,
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .footer-grid > div {
+    grid-column: span 1 !important;
+  }
+
+  .newsletter-box {
+    padding: 14px 12px !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .newsletter-form input {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  .newsletter-form button {
+    width: 100% !important;
+    height: 44px !important;
+    justify-content: center !important;
+  }
+
+  /* Floating WhatsApp */
+  .floating-whatsapp-btn {
+    bottom: 14px !important;
+    right: 14px !important;
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.4rem !important;
   }
 }

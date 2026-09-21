@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Sunkiran Dimex</title>
-  <meta name="description" content="Privacy Policy for Sunkiran Dimex. Learn how we collect, use, and safeguard your personal information and marketing data with strict Meta compliance.">
+  <meta name="description" content="Official Privacy Policy and Data Governance Framework for Sunkiran Dimex. Discover how we protect your personal and business data with strict Meta and DPDP compliance.">
   
   <link rel="canonical" href="https://sunkirandimex.com/privacy-policy.html">
   <meta property="og:title" content="Privacy Policy | Sunkiran Dimex">
-  <meta property="og:description" content="Our commitment to safeguarding your personal information and data privacy.">
+  <meta property="og:description" content="Our commitment to safeguarding your personal data, business analytics, and privacy with enterprise-grade security.">
+  <meta property="og:type" content="website">
 
-  <!-- Phosphor Icons -->
+  <!-- Phosphor Icons (Single weight: Bold / Fill) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Google Fonts -->
@@ -18,7 +19,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Global & Site Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
@@ -26,18 +31,21 @@
       --bg-primary: #000E25;
       --bg-section: #00132E;
       --bg-surface: #041936;
+      --bg-card: rgba(4, 25, 54, 0.72);
+      --bg-card-hover: rgba(7, 34, 72, 0.85);
       --border-blue: #1268D8;
-      --border-blue-soft: rgba(38, 142, 255, 0.42);
+      --border-blue-soft: rgba(38, 142, 255, 0.28);
+      --border-blue-active: rgba(38, 142, 255, 0.65);
       --electric-blue: #168BFF;
       --cyan: #11C8FF;
-      --orange: #FF6A3D;
+      --orange: #FF6508;
       --green: #00D894;
       --text-primary: #F6F9FF;
       --text-secondary: #C7D4E7;
-      --text-muted: #9EADC2;
+      --text-muted: #8E9FB8;
       --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
       --font-display: 'Plus Jakarta Sans', sans-serif;
-      --max-width: 1400px;
+      --max-width: 1360px;
     }
 
     *, *::before, *::after {
@@ -46,24 +54,31 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
     body {
       background-color: var(--bg-primary);
       color: var(--text-secondary);
       font-family: var(--font-sans);
-      line-height: 1.65;
+      line-height: 1.68;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       background-image: 
-        linear-gradient(rgba(58, 140, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(58, 140, 255, 0.035) 1px, transparent 1px);
-      background-size: 48px 48px;
+        radial-gradient(circle at 50% 0%, rgba(22, 139, 255, 0.12) 0%, transparent 60%),
+        linear-gradient(rgba(58, 140, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58, 140, 255, 0.025) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+      overflow-x: clip;
     }
 
     a {
       color: var(--cyan);
       text-decoration: none;
-      transition: color 180ms ease;
+      transition: color 180ms ease, opacity 180ms ease;
     }
     a:hover {
       color: var(--orange);
@@ -74,7 +89,6 @@
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 24px;
-      box-sizing: border-box;
     }
 
     @media (max-width: 768px) {
@@ -83,172 +97,806 @@
       }
     }
 
-    /* Hero */
-    .legal-hero {
-      padding: clamp(96px, 9vw, 110px) 0 32px;
+    /* ========================================================
+       HERO SECTION
+       ======================================================== */
+    .privacy-hero {
+      padding: clamp(96px, 8.5vw, 120px) 0 40px;
       position: relative;
       z-index: 2;
     }
 
-    .pill-badge {
+    .hero-eyebrow-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(0, 216, 148, 0.12);
-      border: 1px solid rgba(0, 216, 148, 0.4);
+      background: rgba(0, 216, 148, 0.1);
+      border: 1px solid rgba(0, 216, 148, 0.35);
       color: var(--green);
-      font-size: 0.72rem;
+      font-size: 0.76rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero-h1 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 44px);
+      font-size: clamp(34px, 4.5vw, 54px);
       font-weight: 900;
       color: var(--text-primary);
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      margin-bottom: 16px;
+      max-width: 900px;
     }
 
-    .last-updated {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+    .hero-h1 span.highlight {
+      background: linear-gradient(135deg, #00D894 0%, #11C8FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero-meta {
+    .hero-subtext {
+      font-size: clamp(1rem, 1.2vw, 1.12rem);
+      color: var(--text-secondary);
+      max-width: 760px;
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+
+    .hero-meta-bar {
       display: flex;
       align-items: center;
-      gap: 16px;
-      font-size: 0.85rem;
+      gap: 20px;
+      font-size: 0.86rem;
       color: var(--text-muted);
       flex-wrap: wrap;
+      padding: 14px 20px;
+      background: rgba(4, 25, 54, 0.5);
+      border: 1px solid var(--border-blue-soft);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      margin-bottom: 40px;
     }
 
-    .meta-item {
-      display: flex;
+    .meta-tag {
+      display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-weight: 600;
+      color: var(--text-primary);
     }
 
-    .meta-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-muted);
+    .meta-tag i {
+      color: var(--cyan);
+      font-size: 1.05rem;
     }
 
-    /* Content Cards */
-    .legal-content-grid {
+    .meta-divider {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ========================================================
+       KEY TRUST HIGHLIGHTS BENTO
+       ======================================================== */
+    .trust-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 1024px) {
+      .trust-bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .trust-bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .trust-bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue-soft);
+      border-radius: 16px;
+      padding: 22px 20px;
+      backdrop-filter: blur(12px);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      padding-bottom: 80px;
+      gap: 10px;
     }
 
-    .legal-card {
-      background: rgba(4, 25, 54, 0.65);
-      border: 1px solid rgba(22, 107, 220, 0.35);
-      border-radius: 16px;
-      padding: clamp(20px, 3vw, 32px);
-      backdrop-filter: blur(10px);
-      transition: border-color 200ms ease, box-shadow 200ms ease;
+    .trust-bento-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-blue-active);
+      box-shadow: 0 12px 30px rgba(0, 14, 37, 0.6);
     }
 
-    .legal-card:hover {
-      border-color: rgba(22, 107, 220, 0.6);
-      box-shadow: 0 8px 24px rgba(0, 14, 37, 0.5);
-    }
-
-    .card-title-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-
-    .card-icon-box {
-      width: 40px;
-      height: 40px;
+    .trust-card-icon {
+      width: 42px;
+      height: 42px;
       border-radius: 10px;
       background: rgba(18, 104, 216, 0.2);
-      border: 1px solid rgba(18, 104, 216, 0.4);
+      border: 1px solid rgba(18, 104, 216, 0.45);
       color: var(--cyan);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
+      font-size: 1.3rem;
     }
 
-    .legal-h2 {
+    .trust-card-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: #FFFFFF;
       letter-spacing: -0.01em;
     }
 
-    .legal-text {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
+    .trust-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
+    /* ========================================================
+       MAIN LAYOUT: 2-COLUMN (STICKY TOC + LEGAL CONTENT)
+       ======================================================== */
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 290px minmax(0, 1fr);
+      gap: 44px;
+      align-items: stretch;
+      padding-bottom: 96px;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    @media (max-width: 980px) {
+      .privacy-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+      }
+    }
+
+    .toc-sidebar-track {
+      position: relative;
+      height: 100%;
+    }
+
+    /* Sticky Sidebar Navigation */
+    .toc-sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 86px;
+      max-height: calc(100vh - 110px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(18, 104, 216, 0.4) transparent;
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue-soft);
+      border-radius: 16px;
+      padding: 22px 18px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 32px rgba(0, 14, 37, 0.4);
+      z-index: 20;
+    }
+
+    @media (max-width: 980px) {
+      .toc-sidebar-track {
+        display: none;
+      }
+      .toc-sidebar {
+        display: none;
+      }
+    }
+
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .toc-header i {
+      color: var(--cyan);
+      font-size: 1.1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 160ms ease;
+    }
+
+    .toc-link i {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: color 160ms ease;
+      flex-shrink: 0;
+    }
+
+    .toc-link:hover {
+      color: var(--text-primary);
+      background: rgba(18, 104, 216, 0.18);
+    }
+
+    .toc-link:hover i {
+      color: var(--cyan);
+    }
+
+    .toc-link.active {
+      color: #FFFFFF;
+      background: rgba(18, 104, 216, 0.35);
+      border-left: 3px solid var(--cyan);
+      padding-left: 9px;
+      font-weight: 700;
+    }
+
+    .toc-link.active i {
+      color: var(--cyan);
+    }
+
+    /* Mobile Quick Scrollbar */
+    .mobile-toc-bar {
+      display: none;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 8px;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mobile-toc-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .mobile-toc-bar {
+        display: flex;
+      }
+    }
+
+    .mobile-toc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue-soft);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .mobile-toc-pill.active {
+      background: rgba(18, 104, 216, 0.4);
+      border-color: var(--cyan);
+      color: #FFFFFF;
+    }
+
+    /* ========================================================
+       LEGAL CONTENT SECTIONS & CARDS
+       ======================================================== */
+    .legal-content-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .legal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue-soft);
+      border-radius: 20px;
+      padding: clamp(20px, 3.5vw, 38px);
+      backdrop-filter: blur(14px);
+      transition: border-color 220ms ease, box-shadow 220ms ease;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .legal-card:hover {
+      border-color: var(--border-blue-active);
+      box-shadow: 0 10px 30px rgba(0, 14, 37, 0.45);
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .card-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(18, 104, 216, 0.22);
+      border: 1px solid rgba(18, 104, 216, 0.5);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .legal-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      min-width: 0;
+    }
+
+    .legal-text {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      min-width: 0;
+    }
+
+    .legal-text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Structured Key-Value Grid inside Cards */
+    .data-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 640px) {
+      .data-matrix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matrix-cell {
+      background: rgba(0, 14, 37, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .matrix-title {
+      font-size: 0.88rem;
+      font-weight: 750;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .matrix-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Feature List */
     .legal-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-top: 14px;
+      gap: 12px;
+      margin-top: 16px;
     }
 
     .legal-list li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 0.88rem;
+      gap: 12px;
+      font-size: 0.92rem;
       color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .legal-list li i {
       color: var(--cyan);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin-top: 3px;
       flex-shrink: 0;
     }
 
-    /* Footer */
-    .site-footer {
-      margin-top: auto;
-      background: #000719;
-      border-top: 1px solid rgba(20, 74, 137, 0.4);
-      padding: 24px 0;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+    .legal-list li.check i {
+      color: var(--green);
     }
 
-    .footer-inner {
+    /* Legal Table (Desktop) */
+    .legal-table-wrapper {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      display: block;
+      margin-top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    .legal-table th {
+      background: rgba(18, 104, 216, 0.18);
+      color: #FFFFFF;
+      font-weight: 750;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: var(--font-display);
+    }
+
+    .legal-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+    }
+
+    .legal-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .table-pill {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(0, 216, 148, 0.12);
+      border: 1px solid rgba(0, 216, 148, 0.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    /* Mobile Cookie Cards (Zero Horizontal Scroll) */
+    .cookie-mobile-list {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-table-only {
+        display: none !important;
+      }
+
+      .cookie-mobile-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 16px;
+        width: 100%;
+      }
+
+      .cookie-mobile-card {
+        background: rgba(0, 14, 37, 0.55);
+        border: 1px solid rgba(115, 160, 230, 0.22);
+        border-radius: 14px;
+        padding: 16px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .cookie-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .cookie-type-badge {
+        font-family: var(--font-display);
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: #FFFFFF;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .cookie-type-badge i {
+        color: var(--cyan);
+        font-size: 1.05rem;
+      }
+
+      .cookie-retention-pill {
+        font-size: 0.74rem;
+        font-weight: 700;
+        color: var(--green);
+        background: rgba(0, 216, 148, 0.12);
+        border: 1px solid rgba(0, 216, 148, 0.35);
+        padding: 2px 8px;
+        border-radius: 999px;
+      }
+
+      .cookie-meta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 0.86rem;
+      }
+
+      .cookie-meta-lbl {
+        font-weight: 750;
+        color: var(--text-muted);
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .cookie-meta-val {
+        color: var(--cyan);
+        font-weight: 650;
+      }
+
+      .cookie-meta-desc {
+        color: var(--text-secondary);
+        line-height: 1.5;
+        font-size: 0.86rem;
+      }
+    }
+
+    /* ========================================================
+       DPO & PRIVACY CONCIERGE ACTION CARD
+       ======================================================== */
+    .dpo-action-card {
+      background: linear-gradient(135deg, rgba(4, 30, 68, 0.9) 0%, rgba(0, 19, 46, 0.95) 100%);
+      border: 1px solid rgba(0, 216, 148, 0.4);
+      border-radius: 20px;
+      padding: clamp(24px, 3.5vw, 40px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dpo-action-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 216, 148, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .dpo-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
       gap: 14px;
+      margin-bottom: 14px;
     }
 
-    .footer-nav-links {
+    .dpo-badge {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0, 216, 148, 0.15);
+      border: 1px solid rgba(0, 216, 148, 0.4);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .dpo-btn-row {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #00D894 0%, #00B37A 100%);
+      color: #001A10;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 800;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 216, 148, 0.4);
+      color: #001A10;
+    }
+
+    .btn-action-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 180ms ease;
+    }
+
+    .btn-action-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #FFFFFF;
+    }
+
+    /* ========================================================
+       COMPREHENSIVE RESPONSIVE STYLES
+       ======================================================== */
+    @media (max-width: 768px) {
+      .privacy-hero {
+        padding: 84px 0 24px;
+      }
+      .hero-h1 {
+        font-size: clamp(28px, 6vw, 38px);
+        margin-bottom: 12px;
+      }
+      .hero-subtext {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
+      .hero-meta-bar {
+        padding: 12px 14px;
+        gap: 8px 14px;
+        margin-bottom: 28px;
+      }
+      .trust-bento-grid {
+        margin-bottom: 36px;
+        gap: 12px;
+      }
+      .legal-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+      .card-header-row {
+        gap: 12px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+      }
+      .card-icon-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+      }
+      .legal-h2 {
+        font-size: 1.18rem;
+      }
+      .legal-text {
+        font-size: 0.9rem;
+      }
+      .legal-table {
+        min-width: 500px;
+      }
+      .dpo-action-card {
+        padding: 22px 16px;
+        border-radius: 16px;
+      }
+      .dpo-btn-row {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .btn-action-primary,
+      .btn-action-secondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        height: 48px;
+        padding: 0 16px;
+      }
     }
 
     @media (max-width: 600px) {
-      .footer-inner {
+      .hero-meta-bar {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .meta-divider {
+        display: none;
+      }
+      .meta-tag {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .page-shell {
+        padding: 0 12px;
+      }
+      .hero-h1 {
+        font-size: 1.65rem;
+      }
+      .trust-bento-card {
+        padding: 18px 14px;
+      }
+      .matrix-cell {
+        padding: 14px 12px;
+      }
+      .matrix-title {
+        font-size: 0.82rem;
+      }
+      .matrix-desc {
+        font-size: 0.78rem;
       }
     }
   </style>
@@ -256,7 +904,7 @@
 <body>
 
   <!-- ========================================================
-       1. NAVIGATION HEADER (Single-Line Desktop, Kinetic Mobile Drawer)
+       1. NAVIGATION HEADER (Unified with Home / Workshop)
        ======================================================== -->
   <header class="header-sticky">
     <div class="container nav-container">
@@ -283,7 +931,7 @@
         <a href="privacy-policy.html" class="nav-link active" aria-current="page">Privacy</a>
       </nav>
 
-      <!-- Right Nav Actions (Desktop CTA + Mobile Menu Button) -->
+      <!-- Right Nav Actions -->
       <div class="nav-actions">
         <a href="contact.html" class="btn btn-orange nav-cta-btn">
           <span>Let's Grow Together &nbsp;→</span>
@@ -347,129 +995,403 @@
     </div>
   </aside>
 
+  <!-- ========================================================
+       MAIN PAGE CONTENT
+       ======================================================== -->
   <main>
     <div class="page-shell">
       
-      <!-- Page Hero Header -->
-      <section class="legal-hero">
-        <div class="pill-badge">
+      <!-- HERO HEADER -->
+      <section class="privacy-hero">
+        <div class="hero-eyebrow-pill">
           <i class="ph-bold ph-shield-check"></i>
-          <span>Official Policy</span>
+          <span>Data Governance & Trust Architecture</span>
         </div>
-        <h1 class="hero-h1">Privacy Policy</h1>
-        <p class="last-updated">Last Updated: September 2026 · Sunkiran Dimex</p>
-      </section>
+        
+        <h1 class="hero-h1">
+          Privacy Policy & <span class="highlight">Data Safeguards</span>
+        </h1>
+        
+        <p class="hero-subtext">
+          At Sunkiran Dimex, we treat your privacy and client analytics with the same precision we apply to high-growth engineering. Here is our transparent commitment to handling, safeguarding, and honoring your data.
+        </p>
 
-      <!-- Legal Policy Sections -->
-      <div class="legal-content-container">
-
-        <!-- 1. Privacy Commitment -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-handshake"></i>
-            </div>
-            <h2 class="legal-h2">Privacy Commitment</h2>
+        <!-- Metadata Bar -->
+        <div class="hero-meta-bar">
+          <div class="meta-tag">
+            <i class="ph-bold ph-calendar-check"></i>
+            <span>Effective Date: September 2026</span>
           </div>
-          <p class="legal-text">
-            Sunkiran Dimex respects your privacy and is committed to protecting any personal information you share with us. This Privacy Policy outlines how we collect, use, and safeguard your data.
-          </p>
-        </article>
-
-        <!-- 2. Information We Collect -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-identification-badge"></i>
-            </div>
-            <h2 class="legal-h2">Information We Collect</h2>
+          <span class="meta-divider">|</span>
+          <div class="meta-tag">
+            <i class="ph-bold ph-buildings"></i>
+            <span>Entity: Sunkiran Dimex</span>
           </div>
-          <p class="legal-text">
-            We collect the following personal and business details when you interact with our website, request consultation, or register for our workshops:
-          </p>
-          <ul class="legal-list">
-            <li><i class="ph-bold ph-check-circle"></i> <span><strong>Full Name</strong></span></li>
-            <li><i class="ph-bold ph-check-circle"></i> <span><strong>Email Address</strong></span></li>
-            <li><i class="ph-bold ph-check-circle"></i> <span><strong>Phone Number / WhatsApp Number</strong></span></li>
-            <li><i class="ph-bold ph-check-circle"></i> <span><strong>Business Information</strong> (shared voluntarily)</span></li>
-            <li><i class="ph-bold ph-check-circle"></i> <span><strong>Information required for service delivery and communication</strong></span></li>
-          </ul>
-        </article>
-
-        <!-- 3. How We Use Your Information -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-gear-six"></i>
-            </div>
-            <h2 class="legal-h2">How We Use Your Information</h2>
+          <span class="meta-divider">|</span>
+          <div class="meta-tag">
+            <i class="ph-bold ph-certificate"></i>
+            <span>Meta & DPDP Compliant</span>
           </div>
-          <p class="legal-text">
-            Your information is processed strictly for the following purposes:
-          </p>
-          <ul class="legal-list">
-            <li><i class="ph-bold ph-arrow-right"></i> <span>Deliver marketing services and campaign management</span></li>
-            <li><i class="ph-bold ph-arrow-right"></i> <span>Provide customer support and technical assistance</span></li>
-            <li><i class="ph-bold ph-arrow-right"></i> <span>Project communication and updates</span></li>
-            <li><i class="ph-bold ph-arrow-right"></i> <span>Lead management and follow-ups</span></li>
-            <li><i class="ph-bold ph-arrow-right"></i> <span>Internal analytics to improve our services</span></li>
-          </ul>
-        </article>
+          <span class="meta-divider">|</span>
+          <div class="meta-tag">
+            <i class="ph-bold ph-envelope-simple"></i>
+            <span>DPO: connect@sunkirandimex.com</span>
+          </div>
+        </div>
 
-        <!-- 4. Data Protection & Security -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
+        <!-- KEY TRUST HIGHLIGHTS BENTO -->
+        <div class="trust-bento-grid">
+          <div class="trust-bento-card">
+            <div class="trust-card-icon">
+              <i class="ph-bold ph-prohibit"></i>
+            </div>
+            <div class="trust-card-title">Zero Data Resale</div>
+            <p class="trust-card-desc">We never sell, rent, or trade your contact info or campaign intelligence to any third party.</p>
+          </div>
+
+          <div class="trust-bento-card">
+            <div class="trust-card-icon">
               <i class="ph-bold ph-lock-key"></i>
             </div>
-            <h2 class="legal-h2">Data Protection & Security</h2>
+            <div class="trust-card-title">256-Bit SSL/TLS</div>
+            <p class="trust-card-desc">All transmission channels, form submissions, and database assets are encrypted in transit and at rest.</p>
           </div>
-          <ul class="legal-list">
-            <li><i class="ph-bold ph-shield-check"></i> <span>We do not sell or rent user data to any third parties</span></li>
-            <li><i class="ph-bold ph-shield-check"></i> <span>All data is stored securely with restricted access</span></li>
-            <li><i class="ph-bold ph-shield-check"></i> <span>Only authorized team members can access client information</span></li>
-            <li><i class="ph-bold ph-shield-check"></i> <span>We follow Meta’s data handling policies and industry standards</span></li>
-          </ul>
-        </article>
 
-        <!-- 5. Cookies -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-cookie"></i>
+          <div class="trust-bento-card">
+            <div class="trust-card-icon">
+              <i class="ph-bold ph-meta-logo"></i>
             </div>
-            <h2 class="legal-h2">Cookies</h2>
+            <div class="trust-card-title">Strict Meta Standards</div>
+            <p class="trust-card-desc">Full alignment with Meta Ads policies, Conversion API governance, and user privacy terms.</p>
           </div>
-          <p class="legal-text">
-            Our website may use cookies to enhance analytics and user experience. These cookies help us understand how visitors use our site and improve our services.
-          </p>
-        </article>
 
-        <!-- 6. Your Rights -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-user-circle-gear"></i>
+          <div class="trust-bento-card">
+            <div class="trust-card-icon">
+              <i class="ph-bold ph-clock-countdown"></i>
             </div>
-            <h2 class="legal-h2">Your Rights</h2>
+            <div class="trust-card-title">24–48h SLA</div>
+            <p class="trust-card-desc">Instant processing of all deletion, export, and consent revocation requests upon verification.</p>
           </div>
-          <p class="legal-text">
-            You may request data deletion or modification at any time. Contact us at <a href="mailto:connect@sunkirandimex.com">connect@sunkirandimex.com</a> for data-related requests. We will respond within 24–48 hours.
-          </p>
-        </article>
+        </div>
+      </section>
 
-        <!-- 7. Policy Changes -->
-        <article class="legal-card">
-          <div class="card-title-row">
-            <div class="card-icon-box">
-              <i class="ph-bold ph-file-text"></i>
+      <!-- MOBILE HORIZONTAL SCROLL TOC -->
+      <div class="mobile-toc-bar" aria-label="Mobile Table of Contents">
+        <a href="#commitment" class="mobile-toc-pill"><i class="ph-bold ph-handshake"></i> Commitment</a>
+        <a href="#collection" class="mobile-toc-pill"><i class="ph-bold ph-identification-badge"></i> Data Collection</a>
+        <a href="#usage" class="mobile-toc-pill"><i class="ph-bold ph-gear-six"></i> How We Use It</a>
+        <a href="#meta-ads" class="mobile-toc-pill"><i class="ph-bold ph-chart-line-up"></i> Meta & Ads</a>
+        <a href="#security" class="mobile-toc-pill"><i class="ph-bold ph-shield-check"></i> Security</a>
+        <a href="#cookies" class="mobile-toc-pill"><i class="ph-bold ph-cookie"></i> Cookies</a>
+        <a href="#rights" class="mobile-toc-pill"><i class="ph-bold ph-user-gear"></i> Your Rights</a>
+      </div>
+
+      <!-- MAIN 2-COLUMN SECTION -->
+      <div class="privacy-layout">
+        
+        <!-- STICKY TABLE OF CONTENTS TRACK -->
+        <div class="toc-sidebar-track">
+          <aside class="toc-sidebar" aria-label="Page Table of Contents">
+            <div class="toc-header">
+              <i class="ph-bold ph-list-dashes"></i>
+              <span>Table of Contents</span>
             </div>
-            <h2 class="legal-h2">Policy Changes</h2>
+            <ul class="toc-list" id="toc-list">
+              <li><a href="#commitment" class="toc-link active"><i class="ph-bold ph-handshake"></i> <span>1. Privacy Commitment</span></a></li>
+              <li><a href="#collection" class="toc-link"><i class="ph-bold ph-identification-badge"></i> <span>2. Data We Collect</span></a></li>
+              <li><a href="#usage" class="toc-link"><i class="ph-bold ph-gear-six"></i> <span>3. Purpose & Processing</span></a></li>
+              <li><a href="#meta-ads" class="toc-link"><i class="ph-bold ph-chart-line-up"></i> <span>4. Meta & Ad Compliance</span></a></li>
+              <li><a href="#security" class="toc-link"><i class="ph-bold ph-shield-check"></i> <span>5. Security Architecture</span></a></li>
+              <li><a href="#cookies" class="toc-link"><i class="ph-bold ph-cookie"></i> <span>6. Cookies & Tracking</span></a></li>
+              <li><a href="#rights" class="toc-link"><i class="ph-bold ph-user-gear"></i> <span>7. Your Rights & GDPR/DPDP</span></a></li>
+              <li><a href="#retention" class="toc-link"><i class="ph-bold ph-archive"></i> <span>8. Data Retention</span></a></li>
+              <li><a href="#concierge" class="toc-link"><i class="ph-bold ph-paper-plane-tilt"></i> <span>9. Privacy Concierge</span></a></li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- LEGAL CONTENT STREAM -->
+        <div class="legal-content-stream">
+          
+          <!-- 1. Commitment -->
+          <article id="commitment" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-handshake"></i>
+              </div>
+              <h2 class="legal-h2">1. Privacy Commitment & Scope</h2>
+            </div>
+            <p class="legal-text">
+              Sunkiran Dimex operates as a premier full-cycle technology, performance marketing, and business automation partner based in Pune, India. We recognize that high performance requires high trust. This Privacy Policy governs all interactions with our website (<a href="https://sunkirandimex.com">sunkirandimex.com</a>), landing pages, lead generation campaigns, WhatsApp automation integrations, and client engagement portals.
+            </p>
+            <p class="legal-text">
+              By accessing our website, requesting strategic consultations, or registering for our workshops, you acknowledge the terms outlined in this framework.
+            </p>
+          </article>
+
+          <!-- 2. Data We Collect -->
+          <article id="collection" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-identification-badge"></i>
+              </div>
+              <h2 class="legal-h2">2. Information We Collect</h2>
+            </div>
+            <p class="legal-text">
+              We practice strict data minimization: we only collect information necessary to deliver exceptional technology, marketing, and client consultation services.
+            </p>
+
+            <div class="data-matrix-grid">
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-user"></i> Personal Identifiers</div>
+                <div class="matrix-desc">Full Name, Business Email Address, Phone Number, WhatsApp Contact Handle.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-briefcase"></i> Enterprise Context</div>
+                <div class="matrix-desc">Company Name, Industry Sector (Education, Healthcare, Real Estate, etc.), Target Revenue Goals.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-device-mobile"></i> Technical Telemetry</div>
+                <div class="matrix-desc">Browser type, IP address (anonymized), device viewport, operating system, and session duration.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-chat-teardrop-dots"></i> Inbound Inquiries</div>
+                <div class="matrix-desc">Strategic project briefs, workshop registration records, and consultation notes provided voluntarily.</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. How We Process & Use Data -->
+          <article id="usage" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-gear-six"></i>
+              </div>
+              <h2 class="legal-h2">3. Purpose & Processing Principles</h2>
+            </div>
+            <p class="legal-text">
+              All collected personal and business data is processed strictly under legitimate business interest, contract fulfillment, or explicit consent:
+            </p>
+            <ul class="legal-list">
+              <li class="check"><i class="ph-bold ph-check-circle"></i> <span><strong>Strategic Service Delivery:</strong> Developing custom software, deploying paid marketing campaigns, and building automated customer pipelines.</span></li>
+              <li class="check"><i class="ph-bold ph-check-circle"></i> <span><strong>Direct Communication:</strong> Scheduling strategy consultations, delivering workshop links, and providing technical support.</span></li>
+              <li class="check"><i class="ph-bold ph-check-circle"></i> <span><strong>Security & Fraud Prevention:</strong> Preventing automated bot submissions and verifying inbound enterprise requests.</span></li>
+              <li class="check"><i class="ph-bold ph-check-circle"></i> <span><strong>Product & Campaign Optimization:</strong> Aggregating anonymous analytics to optimize conversion pathways.</span></li>
+            </ul>
+          </article>
+
+          <!-- 4. Meta & Ad Compliance -->
+          <article id="meta-ads" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-chart-line-up"></i>
+              </div>
+              <h2 class="legal-h2">4. Meta & Third-Party Advertising Governance</h2>
+            </div>
+            <p class="legal-text">
+              As a performance marketing agency running high-volume campaigns across Meta (Facebook & Instagram) and Google, we strictly adhere to all platform advertising standards:
+            </p>
+            <ul class="legal-list">
+              <li><i class="ph-bold ph-caret-right"></i> <span><strong>Meta Conversion API (CAPI):</strong> Server-to-server data transmission uses SHA-256 hashed identifiers for privacy-preserving event matching.</span></li>
+              <li><i class="ph-bold ph-caret-right"></i> <span><strong>Instant Lead Forms:</strong> Contact info captured via Meta Lead Ads is used exclusively for one-to-one consultation outreach regarding requested services.</span></li>
+              <li><i class="ph-bold ph-caret-right"></i> <span><strong>No Sensitive Data Profiling:</strong> We never collect, target, or segment audiences based on sensitive personal categories.</span></li>
+              <li><i class="ph-bold ph-caret-right"></i> <span><strong>Cross-Device Attribution:</strong> Aggregated measurement complies with Apple App Tracking Transparency (ATT) and Android Privacy Sandbox guidelines.</span></li>
+            </ul>
+          </article>
+
+          <!-- 5. Security Architecture -->
+          <article id="security" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-shield-check"></i>
+              </div>
+              <h2 class="legal-h2">5. Data Protection & Security Architecture</h2>
+            </div>
+            <p class="legal-text">
+              We deploy multi-layered security controls to protect client assets from unauthorized access, alteration, or disclosure:
+            </p>
+            <div class="data-matrix-grid">
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-lock-key"></i> Transport Encryption</div>
+                <div class="matrix-desc">Strict HTTPS / TLS 1.3 encryption across all web domains and API endpoints.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-users"></i> Role-Based Access (RBAC)</div>
+                <div class="matrix-desc">Access to client marketing data is restricted exclusively to cleared engineering personnel.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-database"></i> Encrypted Storage</div>
+                <div class="matrix-desc">Databases utilize AES-256 encryption at rest with automated hourly snapshot redundancy.</div>
+              </div>
+              <div class="matrix-cell">
+                <div class="matrix-title"><i class="ph-bold ph-fingerprint"></i> Zero Third-Party Sale</div>
+                <div class="matrix-desc">Under no circumstances will user records be monetized or transferred to data brokers.</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Cookies & Tracking -->
+          <article id="cookies" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-cookie"></i>
+              </div>
+              <h2 class="legal-h2">6. Cookies & Tracking Technologies</h2>
+            </div>
+            <p class="legal-text">
+              We utilize cookies and lightweight browser telemetry to maintain session state and assess website performance:
+            </p>
+
+            <!-- Desktop Table View -->
+            <div class="legal-table-wrapper desktop-table-only">
+              <table class="legal-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Provider</th>
+                    <th>Purpose</th>
+                    <th>Retention</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Strictly Necessary</strong></td>
+                    <td>Sunkiran Dimex</td>
+                    <td>Session integrity, drawer state, and CSRF protection</td>
+                    <td><span class="table-pill">Session / 30 Days</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Performance Analytics</strong></td>
+                    <td>Google Analytics 4</td>
+                    <td>Aggregated page views and viewport load performance</td>
+                    <td><span class="table-pill">14 Months</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Attribution Pixels</strong></td>
+                    <td>Meta Platforms</td>
+                    <td>Measuring campaign effectiveness and consultation ROI</td>
+                    <td><span class="table-pill">90 Days</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Mobile Card View (Zero Horizontal Scroll) -->
+            <div class="cookie-mobile-list">
+              <div class="cookie-mobile-card">
+                <div class="cookie-card-top">
+                  <div class="cookie-type-badge"><i class="ph-bold ph-shield-check"></i> Strictly Necessary</div>
+                  <span class="cookie-retention-pill">Session / 30 Days</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Provider</span>
+                  <span class="cookie-meta-val">Sunkiran Dimex</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Purpose</span>
+                  <span class="cookie-meta-desc">Session integrity, mobile navigation state, and CSRF protection.</span>
+                </div>
+              </div>
+
+              <div class="cookie-mobile-card">
+                <div class="cookie-card-top">
+                  <div class="cookie-type-badge"><i class="ph-bold ph-chart-line-up"></i> Performance Analytics</div>
+                  <span class="cookie-retention-pill">14 Months</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Provider</span>
+                  <span class="cookie-meta-val">Google Analytics 4</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Purpose</span>
+                  <span class="cookie-meta-desc">Aggregated page views, viewport performance, and load metrics.</span>
+                </div>
+              </div>
+
+              <div class="cookie-mobile-card">
+                <div class="cookie-card-top">
+                  <div class="cookie-type-badge"><i class="ph-bold ph-meta-logo"></i> Attribution Pixels</div>
+                  <span class="cookie-retention-pill">90 Days</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Provider</span>
+                  <span class="cookie-meta-val">Meta Platforms</span>
+                </div>
+                <div class="cookie-meta-row">
+                  <span class="cookie-meta-lbl">Purpose</span>
+                  <span class="cookie-meta-desc">Measuring marketing campaign effectiveness and consultation ROI.</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="legal-text" style="margin-top: 14px; font-size: 0.88rem;">
+              You can disable cookies at any time through your browser settings without impacting your ability to browse core portfolio pages.
+            </p>
+          </article>
+
+          <!-- 7. Your Rights -->
+          <article id="rights" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-user-gear"></i>
+              </div>
+              <h2 class="legal-h2">7. Your Privacy Rights (GDPR & DPDP)</h2>
+            </div>
+            <p class="legal-text">
+              Regardless of your geographic location, we provide full governance rights over your data in accordance with the Indian Digital Personal Data Protection Act (DPDP) and international GDPR standards:
+            </p>
+            <ul class="legal-list">
+              <li><i class="ph-bold ph-check-circle"></i> <span><strong>Right to Access:</strong> Request a complete machine-readable copy of all personal records we hold about you.</span></li>
+              <li><i class="ph-bold ph-check-circle"></i> <span><strong>Right to Rectification:</strong> Update or correct inaccurate contact information or corporate details.</span></li>
+              <li><i class="ph-bold ph-check-circle"></i> <span><strong>Right to Erasure (Forget Me):</strong> Request the permanent deletion of your contact records and conversation histories.</span></li>
+              <li><i class="ph-bold ph-check-circle"></i> <span><strong>Right to Opt-Out:</strong> Unsubscribe from marketing dispatches with one click via email or WhatsApp stop command.</span></li>
+            </ul>
+          </article>
+
+          <!-- 8. Data Retention -->
+          <article id="retention" class="legal-card">
+            <div class="card-header-row">
+              <div class="card-icon-badge">
+                <i class="ph-bold ph-archive"></i>
+              </div>
+              <h2 class="legal-h2">8. Data Retention Policy</h2>
+            </div>
+            <p class="legal-text">
+              We maintain data only as long as necessary to fulfill active engagements or satisfy statutory compliance requirements:
+            </p>
+            <ul class="legal-list">
+              <li><i class="ph-bold ph-arrow-right"></i> <span><strong>Inbound Inquiries / Consultations:</strong> Retained for 24 months, then automatically archived or purged.</span></li>
+              <li><i class="ph-bold ph-arrow-right"></i> <span><strong>Active Client Accounts:</strong> Retained for the duration of the active service contract plus statutory tax periods.</span></li>
+              <li><i class="ph-bold ph-arrow-right"></i> <span><strong>Workshop Attendees:</strong> Retained for 12 months for delivery of workshop assets and recording replays.</span></li>
+            </ul>
+          </article>
+
+          <!-- 9. Privacy Concierge / Action Box -->
+          <div id="concierge" class="dpo-action-card">
+            <div class="dpo-header">
+              <div class="dpo-badge">Direct Action</div>
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: #FFFFFF;">
+                Privacy Concierge & Data Protection Office
+              </h3>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 680px; line-height: 1.65;">
+              Need to request an immediate export of your records, initiate a complete deletion, or discuss enterprise data handling agreements? Our Data Protection Officer is directly available.
+            </p>
+
+            <div class="dpo-btn-row">
+              <a href="mailto:connect@sunkirandimex.com?subject=Privacy%20Request%20-%20Data%20Management" class="btn-action-primary">
+                <i class="ph-bold ph-envelope-simple" style="font-size: 1.15rem;"></i>
+                <span>Email Data Protection Officer</span>
+              </a>
+
+              <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20have%20a%20privacy%2Fdata%20related%20inquiry." target="_blank" class="btn-action-secondary">
+                <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
+                <span>Chat via WhatsApp</span>
+              </a>
+            </div>
           </div>
-          <p class="legal-text">
-            We reserve the right to update this Privacy Policy at any time. Changes will be effective immediately upon posting on our website. Please review this policy periodically for updates.
-          </p>
-        </article>
+
+        </div>
 
       </div>
 
@@ -572,7 +1494,93 @@
     <span class="floating-whatsapp-tooltip"><i class="ph-bold ph-chat-teardrop-dots" style="margin-right: 4px;"></i>Chat with us</span>
   </a>
 
-  <!-- Page Scripts -->
+  <!-- Page & Scroll Spy Scripts -->
   <script src="js/app.js"></script>
+  <script>
+    // Smooth Scroll & Active TOC Scroll-Spy (Isolated Track Scrolling)
+    document.addEventListener('DOMContentLoaded', () => {
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const mobilePills = document.querySelectorAll('.mobile-toc-pill');
+      const mobileTrack = document.querySelector('.mobile-toc-bar');
+      const articles = document.querySelectorAll('.legal-card, .dpo-action-card');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            if (!id) return;
+
+            // 1. Desktop Sticky Sidebar TOC Active State
+            tocLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+
+            // 2. Mobile Horizontal Pill Bar Active State (Track-Isolated Scroll)
+            mobilePills.forEach(pill => {
+              if (pill.getAttribute('href') === `#${id}`) {
+                pill.classList.add('active');
+                
+                // Scroll ONLY the horizontal container, never hijack window scroll
+                if (mobileTrack) {
+                  const trackRect = mobileTrack.getBoundingClientRect();
+                  const pillRect = pill.getBoundingClientRect();
+                  const scrollLeftTarget = mobileTrack.scrollLeft + (pillRect.left - trackRect.left) - (trackRect.width / 2) + (pillRect.width / 2);
+                  mobileTrack.scrollTo({ left: Math.max(0, scrollLeftTarget), behavior: 'smooth' });
+                }
+              } else {
+                pill.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-15% 0px -65% 0px',
+        threshold: 0
+      });
+
+      articles.forEach(article => observer.observe(article));
+
+      // GSAP Entrance Animations
+      if (typeof gsap !== 'undefined') {
+        gsap.from('.privacy-hero > *', {
+          opacity: 0,
+          y: 20,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: 'power2.out'
+        });
+
+        gsap.from('.trust-bento-card', {
+          opacity: 0,
+          y: 24,
+          duration: 0.6,
+          stagger: 0.08,
+          delay: 0.25,
+          ease: 'power2.out'
+        });
+
+        if (window.innerWidth > 768) {
+          gsap.utils.toArray('.legal-card').forEach((card) => {
+            gsap.from(card, {
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 88%',
+                toggleActions: 'play none none none'
+              },
+              opacity: 0,
+              y: 20,
+              duration: 0.5,
+              ease: 'power2.out'
+            });
+          });
+        }
+      }
+    });
+  </script>
 </body>
 </html>

@@ -170,12 +170,12 @@
         <!-- Dual CTA Row -->
         <div class="hero-cta-row">
           <button class="btn btn-orange hero-cta-primary open-consultation-btn">
-            <i class="ph-fill ph-paper-plane-tilt" style="font-size: 1.25rem;"></i>
+            <i class="ph-fill ph-paper-plane-tilt" style="font-size: 1.15rem; flex-shrink: 0;"></i>
             <span>Get Free Consultation &nbsp;→</span>
           </button>
           
           <button class="btn btn-glass hero-cta-secondary open-video-btn">
-            <i class="ph-fill ph-play-circle" style="font-size: 1.4rem; color: #FFFFFF;"></i>
+            <i class="ph-fill ph-play-circle" style="font-size: 1.25rem; color: #FFFFFF; flex-shrink: 0;"></i>
             <span>Watch Our Story</span>
           </button>
         </div>
@@ -184,18 +184,12 @@
         <div class="hero-trust-box">
           <div class="trust-copy-wrap">
             <div class="trust-title">100+ Businesses Trust Us</div>
-            <div class="trust-subtext" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 6px;">
-              <span style="font-size: 0.78rem; color: #6E88AA; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                <span style="display: inline-flex; align-items: center; gap: 4px;"><i class="ph-bold ph-graduation-cap" style="color: #4D9DFF;"></i> Education</span>
-                <span>·</span>
-                <span style="display: inline-flex; align-items: center; gap: 4px;"><i class="ph-bold ph-first-aid" style="color: #4D9DFF;"></i> Healthcare</span>
-                <span>·</span>
-                <span style="display: inline-flex; align-items: center; gap: 4px;"><i class="ph-bold ph-buildings" style="color: #4D9DFF;"></i> Real Estate</span>
-                <span>·</span>
-                <span style="display: inline-flex; align-items: center; gap: 4px;"><i class="ph-bold ph-sparkle" style="color: #4D9DFF;"></i> Wellness</span>
-                <span>·</span>
-                <span style="display: inline-flex; align-items: center; gap: 4px;"><i class="ph-bold ph-factory" style="color: #4D9DFF;"></i> Industrial B2B</span>
-              </span>
+            <div class="hero-trust-chips">
+              <span class="hero-trust-chip"><i class="ph-bold ph-graduation-cap"></i> Education</span>
+              <span class="hero-trust-chip"><i class="ph-bold ph-first-aid"></i> Healthcare</span>
+              <span class="hero-trust-chip"><i class="ph-bold ph-buildings"></i> Real Estate</span>
+              <span class="hero-trust-chip"><i class="ph-bold ph-sparkle"></i> Wellness</span>
+              <span class="hero-trust-chip"><i class="ph-bold ph-factory"></i> Industrial B2B</span>
             </div>
           </div>
         </div>
@@ -375,6 +369,21 @@
   </section>
 
   <!-- ========================================================
+       MOBILE QUICK NAVIGATION BAR (Zero-Scroll Instant Access)
+       ======================================================== -->
+  <nav class="mobile-quick-nav" aria-label="Quick Page Navigation">
+    <div class="mobile-quick-nav-track">
+      <a href="#services" class="quick-nav-pill"><i class="ph-bold ph-gear"></i> Services</a>
+      <a href="#unified-advantage" class="quick-nav-pill"><i class="ph-bold ph-check-shield"></i> Why Us</a>
+      <a href="#our-process" class="quick-nav-pill"><i class="ph-bold ph-arrows-clockwise"></i> Process</a>
+      <a href="#case-studies" class="quick-nav-pill"><i class="ph-bold ph-chart-line-up"></i> Case Studies</a>
+      <a href="#portfolio" class="quick-nav-pill"><i class="ph-bold ph-folder-simple"></i> Portfolio</a>
+      <a href="workshop.html" class="quick-nav-pill quick-nav-pill-highlight"><i class="ph-bold ph-presentation"></i> Workshop</a>
+      <a href="#contact" class="quick-nav-pill"><i class="ph-bold ph-phone"></i> Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========================================================
        4. SERVICES SECTION (3-Pillar Architecture)
        ======================================================== -->
   <section id="services" class="section section-light">
@@ -543,9 +552,6 @@
 
           <div class="ua-subheadline-wrap">
             <span class="handwritten green ua-subheadline">Get Everything Under One Roof</span>
-            <svg class="ua-subhead-underline" viewBox="0 0 240 12" fill="none" preserveAspectRatio="none">
-              <path d="M4 6 C60 11, 160 2, 236 6" stroke="#00D19A" stroke-width="3.5" stroke-linecap="round" />
-            </svg>
           </div>
         </div>
 
