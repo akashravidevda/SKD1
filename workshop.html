@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grow My Customers - Live Meta Ads Workshop | Sunkiran Dimex</title>
-  <meta name="description" content="Join Kiran Hajare for a live 90-minute Meta Ads workshop on building a predictable customer acquisition system with Facebook and Instagram advertising.">
+  <meta name="description" content="Join Kiran Hajare for a live 90-minute Meta Ads masterclass on building a predictable customer acquisition system with Facebook and Instagram advertising.">
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
 
   <!-- Phosphor Icons (Locked to Phosphor Bold weight) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -36,7 +41,7 @@
       <a href="index.html" class="nav-brand">
         <div class="brand-icon-box">
           <div class="brand-icon-inner">
-            <img src="images/logo.svg" alt="Sunkiran Dimex Sunrise Logo" style="width: 24px; height: 24px;">
+            <img src="images/logo.svg" alt="Sunkiran Dimex Logo" style="width: 24px; height: 24px;">
           </div>
         </div>
         <div class="brand-text-wrap">
@@ -57,7 +62,8 @@
       <!-- Right Nav Actions -->
       <div class="nav-actions">
         <a href="#register" class="btn btn-orange nav-cta-btn">
-          <span>Reserve My Seat &nbsp;→</span>
+          <span class="d-desktop-only">Reserve My Seat &nbsp;→</span>
+          <span class="d-mobile-only">Reserve Seat &nbsp;→</span>
         </a>
 
         <button id="mobile-menu-btn" class="mobile-menu-trigger" aria-label="Open Navigation Menu">
@@ -123,32 +129,31 @@
 
   <main>
     <!-- ========================================================
-         2. HERO SECTION
+         2. HERO SECTION (Executive Dark Bento Grid)
          ======================================================== -->
     <section class="workshop-hero-section" id="workshop-hero">
       <div class="page-shell hero-grid">
         
         <!-- Left Hero Content -->
-        <div class="hero-left">
+        <div class="hero-left hero-content">
           
           <div class="pill-eyebrow">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span>LIVE ONLINE WORKSHOP</span>
+            <span>EXECUTIVE LIVE SPRINT · META ADS SYSTEM</span>
           </div>
 
           <h1 class="hero-h1">
-            Grow My<br>
-            <span class="text-orange">Customers</span>
+            The Predictable <span class="text-orange">Customer Acquisition</span> Blueprint
           </h1>
 
-          <p class="hero-body">
-            A 90-minute live session with Kiran Hajare on building a predictable customer acquisition system with Meta Ads — the same structure we run for clients every day.
+          <p class="hero-body hero-body-text">
+            A 90-minute live masterclass with Kiran Hajare on building a high-ROAS Meta Ads acquisition system — the exact frameworks used daily to scale high-growth businesses.
           </p>
 
-          <!-- Session Metadata Strip -->
+          <!-- Session Metadata Glass Strip -->
           <div class="session-meta-strip">
             
-            <div class="meta-pill meta-pill-date">
+            <div class="meta-pill meta-item meta-pill-date">
               <div class="meta-pill-icon" aria-hidden="true">
                 <i class="ph-bold ph-calendar-blank"></i>
               </div>
@@ -158,7 +163,7 @@
               </div>
             </div>
 
-            <div class="meta-pill meta-pill-time">
+            <div class="meta-pill meta-item meta-pill-time">
               <div class="meta-pill-icon" aria-hidden="true">
                 <i class="ph-bold ph-clock"></i>
               </div>
@@ -168,7 +173,7 @@
               </div>
             </div>
 
-            <div class="meta-pill meta-pill-format">
+            <div class="meta-pill meta-item meta-pill-format">
               <div class="meta-pill-icon" aria-hidden="true">
                 <i class="ph-bold ph-video-camera"></i>
               </div>
@@ -180,80 +185,82 @@
 
           </div>
 
-          <div class="following-session-text">
-            Following session: Thursday, 24 September 2026
+          <!-- Hero CTA Row -->
+          <div class="hero-cta-row hero-action-group">
+            <a href="#register" class="btn-reserve-pill">
+              <span class="d-desktop-only">Reserve Complimentary Seat &nbsp;→</span>
+              <span class="d-mobile-only">Reserve Seat &nbsp;→</span>
+            </a>
+            <div class="hero-seats-badge">
+              <span class="pulse-dot"></span>
+              <span>Limited to 50 Live Seats</span>
+            </div>
           </div>
 
-          <!-- Hero CTA Row -->
-          <div class="hero-cta-row">
-            <a href="#register" class="btn-reserve-pill">
-              <span>Reserve My Seat</span>
-              <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
-            </a>
-            <span class="hero-microcopy">No card required · Seats are limited</span>
+          <div class="hero-trust-proof social-proof-strip">
+            <div class="trust-proof-item">
+              <i class="ph-bold ph-check-circle text-green"></i>
+              <span>100% Free Live Access</span>
+            </div>
+            <div class="trust-proof-item">
+              <i class="ph-bold ph-chats-circle text-blue"></i>
+              <span>Live Q&amp;A on Your Numbers</span>
+            </div>
+            <div class="trust-proof-item">
+              <i class="ph-bold ph-file-text text-purple"></i>
+              <span>Includes Actionable SOPs</span>
+            </div>
           </div>
 
         </div>
 
-        <!-- Right Hero Visual / Workstation -->
-        <div class="hero-right">
+        <!-- Right Hero Visual / Command Center Bento Card -->
+        <div class="hero-right hero-preview-col">
           
-          <!-- Handwritten Annotation Top-Right -->
-          <div class="handwritten-note hero-annotation-box" aria-hidden="true">
-            <div>Learn the system.</div>
-            <div>Build the flow.</div>
-            <svg class="arrow-sketch" width="34" height="38" viewBox="0 0 34 38" style="margin-left: auto; margin-top: 2px;">
-              <path d="M 26 2 Q 30 18 8 32 M 8 32 L 16 26 M 8 32 L 14 36" />
-            </svg>
-          </div>
-
-          <div class="hero-visual-container">
+          <div class="hero-bento-panel">
             
-            <!-- Floating Meta & IG Badges -->
-            <div class="hero-meta-badges">
-              <div class="badge-meta" title="Meta Ads">
-                <i class="ph-bold ph-infinity"></i>
+            <!-- Bento Panel Header -->
+            <div class="bento-panel-header">
+              <div class="bento-panel-brand">
+                <span class="status-indicator"></span>
+                <span class="bento-panel-title">LIVE CAMPAIGN COMMAND CENTER</span>
               </div>
-              <div class="badge-ig" title="Instagram Ads">
-                <i class="ph-bold ph-instagram-logo"></i>
+              <div class="bento-panel-tag">Meta Ads OS</div>
+            </div>
+
+            <!-- Dashboard Mockup Image Frame -->
+            <div class="hero-dashboard-viewport">
+              <img src="images/workshop-dashboard.jpg" alt="Live Meta Ads Campaign Dashboard Performance command center" class="hero-dashboard-img">
+              <div class="viewport-glow-overlay"></div>
+            </div>
+
+            <!-- Bento Live Metrics Strip -->
+            <div class="hero-metrics-bento">
+              <div class="metric-bento-card">
+                <div class="metric-bento-val">245K <span class="metric-pill-up">↑ 32%</span></div>
+                <div class="metric-bento-lbl">Total Reach</div>
+              </div>
+              <div class="metric-bento-card">
+                <div class="metric-bento-val">4,892 <span class="metric-pill-up">↑ 56%</span></div>
+                <div class="metric-bento-lbl">Qualified Leads</div>
+              </div>
+              <div class="metric-bento-card">
+                <div class="metric-bento-val">₹42 <span class="metric-pill-down">↓ 46%</span></div>
+                <div class="metric-bento-lbl">Cost per Lead</div>
               </div>
             </div>
 
-            <!-- Laptop Mockup Frame -->
-            <div class="hero-laptop-frame">
-              <img src="images/workshop-dashboard.jpg" alt="Live Meta Ads Campaign Dashboard Performance command center" class="hero-laptop-img">
-            </div>
-
-            <!-- Floating Metric Stats Card Right -->
-            <div class="hero-floating-metrics">
-              <div class="metric-stat-item">
-                <span class="metric-stat-val">245K <span class="tag-green">↑ 32%</span></span>
-                <span class="metric-stat-lbl">Total Reach</span>
+            <!-- Host Anchor Card -->
+            <a href="#your-host" class="hero-host-anchor" title="Meet the Workshop Host Kiran Hajare">
+              <div class="host-avatar-ring">
+                <img src="images/kiran-hajare.jpg" alt="Kiran Hajare live workshop host" class="host-avatar-img">
+                <span class="live-dot-pulse" aria-hidden="true"></span>
               </div>
-              <div class="metric-stat-item">
-                <span class="metric-stat-val">4,892 <span class="tag-green">↑ 56%</span></span>
-                <span class="metric-stat-lbl">Leads</span>
+              <div class="host-anchor-info">
+                <div class="host-anchor-name">Kiran Hajare</div>
+                <div class="host-anchor-title">Live Host · Meta Ads Specialist (6+ Yrs)</div>
               </div>
-              <div class="metric-stat-item">
-                <span class="metric-stat-val">₹42 <span class="tag-green">↓ 46%</span></span>
-                <span class="metric-stat-lbl">Cost per Lead</span>
-              </div>
-            </div>
-
-            <!-- Speaker Video Inset Box -->
-            <a href="#your-host" class="hero-speaker-inset" title="Meet the Workshop Host Kiran Hajare">
-              <div class="speaker-avatar-wrap">
-                <img src="images/kiran-hajare.jpg" alt="Kiran Hajare live workshop host" class="speaker-avatar">
-                <span class="live-pulse-dot" aria-hidden="true"></span>
-              </div>
-              <div class="speaker-details">
-                <div class="speaker-meta-top">
-                  <span class="speaker-badge-live"><span class="pulse-dot"></span> Live Host</span>
-                  <span class="speaker-exp-pill">6+ Yrs Exp</span>
-                </div>
-                <div class="speaker-info-name">Kiran Hajare</div>
-              </div>
-              <div class="speaker-action-tag">
+              <div class="host-anchor-badge">
                 <i class="ph-bold ph-chats-circle"></i>
                 <span>Live Q&amp;A</span>
               </div>
@@ -267,150 +274,179 @@
     </section>
 
     <!-- ========================================================
-         3. COUNTDOWN BAR
+         3. COUNTDOWN & COHORT URGENCY STRIP
          ======================================================== -->
     <section class="countdown-section" id="countdown">
-      <div class="page-shell countdown-bar-container">
-        
-        <div class="countdown-label-box">
-          <i class="ph-bold ph-alarm" aria-hidden="true"></i>
-          <span class="countdown-title">Registration closes in</span>
+      <div class="page-shell">
+        <div class="countdown-urgency-strip">
+
+          <!-- Left: Live Scarcity Signal -->
+          <div class="countdown-left">
+            <span class="live-badge">
+              <span class="live-badge-dot"></span>
+              <span class="live-badge-text">LIVE · 50 SEATS</span>
+            </span>
+            <div class="countdown-text-group">
+              <span class="countdown-title">Registration Closes In</span>
+              <span class="countdown-sub">Sun, 8:00 PM IST · Zoom</span>
+            </div>
+          </div>
+
+          <!-- Center: Big Timer -->
+          <div class="countdown-center">
+            <div class="timer-cluster">
+              <div class="timer-unit">
+                <span class="timer-num" id="timer-days">01</span>
+                <span class="timer-lbl">Days</span>
+              </div>
+              <span class="timer-colon" aria-hidden="true">:</span>
+              <div class="timer-unit">
+                <span class="timer-num" id="timer-hours">23</span>
+                <span class="timer-lbl">Hrs</span>
+              </div>
+              <span class="timer-colon" aria-hidden="true">:</span>
+              <div class="timer-unit timer-unit-highlight">
+                <span class="timer-num" id="timer-minutes">06</span>
+                <span class="timer-lbl">Min</span>
+              </div>
+              <span class="timer-colon" aria-hidden="true">:</span>
+              <div class="timer-unit">
+                <span class="timer-num timer-sec" id="timer-seconds">12</span>
+                <span class="timer-lbl">Sec</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: CTA -->
+          <div class="countdown-right">
+            <a href="#register" class="countdown-cta-btn">
+              Reserve My Seat&nbsp;→
+            </a>
+            <button class="cal-ghost-btn" aria-label="Add to Google Calendar">
+              <i class="ph-bold ph-calendar-plus"></i>
+            </button>
+          </div>
+
         </div>
-
-        <div class="countdown-timer-group">
-          
-          <div class="timer-box">
-            <span class="timer-num" id="timer-days">01</span>
-            <span class="timer-lbl">Days</span>
-          </div>
-
-          <div class="timer-box">
-            <span class="timer-num" id="timer-hours">23</span>
-            <span class="timer-lbl">Hours</span>
-          </div>
-
-          <div class="timer-box timer-highlight">
-            <span class="timer-num" id="timer-minutes">06</span>
-            <span class="timer-lbl">Minutes</span>
-          </div>
-
-          <div class="timer-box">
-            <span class="timer-num" id="timer-seconds">12</span>
-            <span class="timer-lbl">Seconds</span>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
     <!-- ========================================================
-         4. WHAT WE COVER SECTION
+         4. WHAT WE COVER (6-Card Masterclass Curriculum Bento Grid)
          ======================================================== -->
     <section class="what-we-cover-section" id="what-we-cover">
       <div class="page-shell">
         
         <!-- Section Header -->
-        <div class="what-header-wrap">
-          <div>
-            <div class="pill-eyebrow">
-              <span>WHAT WE COVER</span>
-            </div>
-            <h2 class="section-h2" style="white-space: pre-line;">A Practical System,
-Not Just Another Ads Session</h2>
-            <p class="section-desc">
-              In 90 minutes, Kiran walks through the practical structure behind predictable Meta Ads customer acquisition.
-            </p>
+        <div class="section-header-block">
+          <div class="pill-eyebrow">
+            <span>SESSION CURRICULUM</span>
           </div>
-
-          <div class="handwritten-note what-annotation-box" aria-hidden="true">
-            <div>From strategy</div>
-            <div>to customers</div>
-            <svg class="arrow-sketch" width="32" height="36" viewBox="0 0 32 36" style="margin-left: auto; margin-top: 2px;">
-              <path d="M 6 4 Q 26 14 16 30 M 16 30 L 24 26 M 16 30 L 20 34" />
-            </svg>
-          </div>
+          <h2 class="section-h2">
+            A Practical System, <span class="text-orange">Not Just Theory</span>
+          </h2>
+          <p class="section-desc">
+            In 90 focused minutes, Kiran walks through the exact operational frameworks powering profitable customer acquisition across 100+ business niches.
+          </p>
         </div>
 
-        <!-- 6 Cards Grid -->
+        <!-- 6 Bento Cards Grid -->
         <div class="topics-grid">
           
-          <!-- Card 01: Blue -->
-          <article class="topic-card blue">
+          <!-- Card 01: Architecture -->
+          <article class="topic-card">
             <div class="topic-header-row">
               <span class="topic-num">01</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-target"></i>
+                <i class="ph-bold ph-tree-structure"></i>
               </div>
             </div>
-            <h3 class="topic-title">The acquisition system</h3>
-            <p class="topic-desc">The three-step structure that brings customers in consistently, instead of chasing leads one by one.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">Acquisition Architecture</h3>
+            <p class="topic-desc">The 3-stage funnel structure that generates inbound buyers consistently, replacing ad-hoc boosting with predictable system design.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-check"></i>
+              <span>Funnel Blueprint</span>
+            </div>
           </article>
 
-          <!-- Card 02: Orange -->
-          <article class="topic-card orange">
+          <!-- Card 02: Targeting -->
+          <article class="topic-card">
             <div class="topic-header-row">
               <span class="topic-num">02</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-megaphone"></i>
+                <i class="ph-bold ph-crosshair-simple"></i>
               </div>
             </div>
-            <h3 class="topic-title">Campaigns that bring buyers</h3>
-            <p class="topic-desc">How to set up a Meta Ads campaign that reaches people ready to purchase — not just people who click.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">High-Intent Buyer Campaigns</h3>
+            <p class="topic-desc">How to configure Meta Ads campaigns to reach qualified prospects ready to purchase — avoiding low-intent clicks that inflate ad waste.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-check"></i>
+              <span>CPA Optimization</span>
+            </div>
           </article>
 
-          <!-- Card 03: Purple -->
-          <article class="topic-card purple">
+          <!-- Card 03: Creatives -->
+          <article class="topic-card">
             <div class="topic-header-row">
               <span class="topic-num">03</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-pencil-simple-line"></i>
+                <i class="ph-bold ph-magic-wand"></i>
               </div>
             </div>
-            <h3 class="topic-title">Offer and creative pairing</h3>
-            <p class="topic-desc">The combination of offer and creative that brings your cost per lead down and keeps it there.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">Offer &amp; Creative Engineering</h3>
+            <p class="topic-desc">The psychological hook and offer pairing methodology that drives click-through rates up and keeps customer acquisition cost stable.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-check"></i>
+              <span>Swipe Files</span>
+            </div>
           </article>
 
-          <!-- Card 04: Green -->
-          <article class="topic-card green">
+          <!-- Card 04: Conversion Automation -->
+          <article class="topic-card">
             <div class="topic-header-row">
               <span class="topic-num">04</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-users-three"></i>
+                <i class="ph-bold ph-lightning"></i>
               </div>
             </div>
-            <h3 class="topic-title">Follow-up that converts</h3>
-            <p class="topic-desc">A simple follow-up flow that turns enquiries into paying customers without a large sales team.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">Conversion &amp; Follow-Up Flow</h3>
+            <p class="topic-desc">Automated WhatsApp and email nurturing sequences that convert inbound leads into paid clients without needing large sales teams.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-check"></i>
+              <span>WhatsApp Automation</span>
+            </div>
           </article>
 
-          <!-- Card 05: Yellow -->
-          <article class="topic-card yellow">
+          <!-- Card 05: Unit Economics -->
+          <article class="topic-card">
             <div class="topic-header-row">
               <span class="topic-num">05</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-chart-bar"></i>
+                <i class="ph-bold ph-chart-line-up"></i>
               </div>
             </div>
-            <h3 class="topic-title">Reading your numbers</h3>
-            <p class="topic-desc">Which metrics actually decide whether a campaign is working, and which ones you can safely ignore.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">Unit Economics &amp; ROAS Math</h3>
+            <p class="topic-desc">The 3 north-star metrics that dictate profitable scale, and which vanity metrics you can safely ignore to protect your cash flow.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-check"></i>
+              <span>Metric Calculator</span>
+            </div>
           </article>
 
-          <!-- Card 06: Cyan -->
-          <article class="topic-card cyan">
+          <!-- Card 06: Live Q&A -->
+          <article class="topic-card topic-card-accent">
             <div class="topic-header-row">
               <span class="topic-num">06</span>
               <div class="topic-icon-box" aria-hidden="true">
-                <i class="ph-bold ph-chat-centered-text"></i>
+                <i class="ph-bold ph-chats-circle"></i>
               </div>
             </div>
-            <h3 class="topic-title">Live Q&amp;A</h3>
-            <p class="topic-desc">Bring your business and your current numbers. Kiran answers directly on the call.</p>
-            <i class="ph-bold ph-arrow-right topic-arrow" aria-hidden="true"></i>
+            <h3 class="topic-title">Live Campaign Teardown &amp; Q&amp;A</h3>
+            <p class="topic-desc">Bring your current numbers, live ads, and sales bottleneck. Kiran breaks down your setup directly on Zoom with real-time feedback.</p>
+            <div class="topic-footer-tag">
+              <i class="ph-bold ph-broadcast"></i>
+              <span>Interactive Audit</span>
+            </div>
           </article>
 
         </div>
@@ -419,62 +455,68 @@ Not Just Another Ads Session</h2>
     </section>
 
     <!-- ========================================================
-         5. WHO SHOULD ATTEND SECTION
+         5. WHO SHOULD ATTEND (4-Column Bento Grid)
          ======================================================== -->
     <section class="who-should-attend-section" id="who-should-attend">
       <div class="page-shell">
         
-        <div class="who-header-wrap">
-          <div>
-            <div class="pill-eyebrow">
-              <span>WHO SHOULD ATTEND</span>
-            </div>
-            <h2 class="section-h2" style="margin-bottom: 0;">
-              Built For Businesses That Want Customers
-            </h2>
-          </div>
-
-          <div class="handwritten-note who-annotation-box" aria-hidden="true">
-            <div>Is this workshop</div>
-            <div>for you?</div>
-            <svg class="arrow-sketch" width="30" height="34" viewBox="0 0 30 34" style="margin-left: auto; margin-top: 2px;">
-              <path d="M 24 2 Q 28 16 8 28 M 8 28 L 16 24 M 8 28 L 14 32" />
-            </svg>
-          </div>
+        <div class="section-header-block align-left">
+          <h2 class="section-h2">
+            Engineered For Businesses <span class="text-orange">Ready To Scale</span>
+          </h2>
+          <p class="section-desc">
+            Whether you are expanding a high-margin service, coaching clients, or scaling product sales, this sprint provides direct clarity on what's broken and how to fix it.
+          </p>
         </div>
 
         <div class="audience-grid">
           
-          <div class="audience-card orange">
+          <div class="audience-card">
             <div class="audience-icon-box" aria-hidden="true">
               <i class="ph-bold ph-storefront"></i>
             </div>
-            <h3 class="audience-title">Business owners</h3>
-            <p class="audience-desc">Running a local or service business and wanting a steady flow of enquiries.</p>
+            <h3 class="audience-title">Founders &amp; Business Owners</h3>
+            <p class="audience-desc">Running a local, B2B, or service enterprise and seeking a predictable flow of inbound customer enquiries.</p>
+            <div class="audience-check-list">
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> Scalable customer flow</div>
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> Predictable ad spend</div>
+            </div>
           </div>
 
-          <div class="audience-card purple">
+          <div class="audience-card">
             <div class="audience-icon-box" aria-hidden="true">
               <i class="ph-bold ph-graduation-cap"></i>
             </div>
-            <h3 class="audience-title">Coaches &amp; consultants</h3>
-            <p class="audience-desc">Selling expertise and needing a reliable way to fill your calendar.</p>
-          </div>
-
-          <div class="audience-card blue">
-            <div class="audience-icon-box" aria-hidden="true">
-              <i class="ph-bold ph-bag"></i>
+            <h3 class="audience-title">Coaches &amp; Consultants</h3>
+            <p class="audience-desc">Selling premium expertise and needing a steady calendar filled with high-ticket discovery appointments.</p>
+            <div class="audience-check-list">
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> High-ticket qualification</div>
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> Automated calendar booking</div>
             </div>
-            <h3 class="audience-title">D2C &amp; retail</h3>
-            <p class="audience-desc">Selling products online and wanting Meta Ads to pay for themselves.</p>
           </div>
 
-          <div class="audience-card green">
+          <div class="audience-card">
+            <div class="audience-icon-box" aria-hidden="true">
+              <i class="ph-bold ph-shopping-bag"></i>
+            </div>
+            <h3 class="audience-title">D2C &amp; E-Commerce Brands</h3>
+            <p class="audience-desc">Selling physical or digital products online and wanting Meta Ads campaigns that scale with strong ROAS.</p>
+            <div class="audience-check-list">
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> ROAS-driven creatives</div>
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> High repeat retention</div>
+            </div>
+          </div>
+
+          <div class="audience-card">
             <div class="audience-icon-box" aria-hidden="true">
               <i class="ph-bold ph-briefcase"></i>
             </div>
-            <h3 class="audience-title">Agency owners</h3>
-            <p class="audience-desc">Managing campaigns for clients and looking to sharpen your setup.</p>
+            <h3 class="audience-title">Marketing &amp; Agency Teams</h3>
+            <p class="audience-desc">Managing performance budgets for clients and looking to sharpen operational creative and tracking stacks.</p>
+            <div class="audience-check-list">
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> Battle-tested SOPs</div>
+              <div class="audience-check-item"><i class="ph-bold ph-check"></i> Client retention systems</div>
+            </div>
           </div>
 
         </div>
@@ -483,39 +525,35 @@ Not Just Another Ads Session</h2>
     </section>
 
     <!-- ========================================================
-         6. HOST SECTION
+         6. HOST SECTION (Executive Authority & Track Record Bento)
          ======================================================== -->
     <section class="host-section" id="your-host">
       <div class="page-shell">
         
-        <div class="host-card-container">
+        <div class="host-card-container host-card">
           
           <!-- Left Column: Host Portrait & Endorsement -->
           <div class="host-profile-col">
             <div class="host-image-wrap">
               <img src="images/kiran-hajare.jpg" alt="Kiran Hajare - Meta Ads & Customer Acquisition Expert" class="host-img">
-              <span class="host-live-badge"><span class="pulse-dot"></span> LIVE WORKSHOP HOST</span>
+              <span class="host-live-badge"><span class="pulse-dot"></span> LIVE MASTERCLASS HOST</span>
             </div>
             
             <div class="host-quote-snippet">
-              <i class="ph-fill ph-quotes quote-icon"></i>
-              <p class="quote-text">“Real strategies. Real businesses. Real growth.”</p>
+              <i class="ph-bold ph-quotes quote-icon"></i>
+              <p class="quote-text">“Real strategies. Real businesses. Real predictable growth.”</p>
               <span class="quote-author">— Kiran Hajare</span>
             </div>
           </div>
 
           <!-- Right Column: Host Authority & Proof Metrics -->
           <div class="host-content-col">
-            <div class="pill-eyebrow">
-              <span class="pulse-dot"></span>
-              <span>MEET YOUR HOST</span>
-            </div>
             
             <h3 class="host-name">Kiran Hajare</h3>
-            <div class="host-role">Meta Ads &amp; Customer Acquisition Expert</div>
+            <div class="host-role">Founder &amp; Performance Acquisition Lead, Sunkiran Dimex</div>
             
             <p class="host-bio">
-              With 6+ years specializing in Meta Ads, Kiran has managed over 1,000 high-performance campaigns across 100+ business niches. In this live session, he breaks down the exact customer acquisition frameworks used daily to scale businesses predictably.
+              With over 6 years specializing strictly in Meta Ads and growth engineering, Kiran has architected 1,000+ high-converting campaigns across 100+ business niches. In this live sprint, he shares the operational blueprints used every day for private retainers.
             </p>
 
             <!-- Proof Metrics Grid -->
@@ -548,12 +586,12 @@ Not Just Another Ads Session</h2>
                 <span>100% Practical &amp; Actionable</span>
               </div>
               <div class="host-highlight-tag">
-                <i class="ph-bold ph-chat-circle-dots" style="color: #38A2FF;"></i>
+                <i class="ph-bold ph-chats-circle" style="color: #38A2FF;"></i>
                 <span>Live Q&amp;A on Your Real Numbers</span>
               </div>
               <div class="host-highlight-tag">
                 <i class="ph-bold ph-lightning" style="color: #FF6A3D;"></i>
-                <span>No Agency Fluff or Theory</span>
+                <span>Zero Agency Fluff or Gimmicks</span>
               </div>
             </div>
 
@@ -565,10 +603,10 @@ Not Just Another Ads Session</h2>
     </section>
 
     <!-- ========================================================
-         7. REGISTRATION SECTION
+         7. REGISTRATION SECTION (Executive Registration Card)
          ======================================================== -->
-    <section class="registration-section" id="register">
-      <div class="page-shell registration-grid">
+    <section class="registration-section register-section" id="register">
+      <div class="page-shell registration-grid register-card">
         
         <!-- Left Value & Info -->
         <div class="reg-left">
@@ -576,11 +614,11 @@ Not Just Another Ads Session</h2>
           <div>
             <div class="pill-eyebrow">
               <span class="pulse-dot"></span>
-              <span>RESERVE YOUR COMPLIMENTARY SEAT</span>
+              <span>COMPLIMENTARY REGISTRATION</span>
             </div>
 
             <h2 class="section-h2">
-              Join the Next <span class="text-orange">Live Workshop</span>
+              Join The Next <span class="text-orange">Live Cohort</span>
             </h2>
 
             <div class="complimentary-badge-deck">
@@ -594,8 +632,8 @@ Not Just Another Ads Session</h2>
               </div>
             </div>
 
-            <p class="section-desc" style="margin-bottom: 20px;">
-              There is no fee to attend. We keep each live cohort intimate so every business owner gets actionable answers to their specific campaign questions.
+            <p class="section-desc" style="margin-bottom: 24px;">
+              There is no fee to attend. We maintain strict cohort capacity so every attendee has the opportunity to have their campaign audited live.
             </p>
 
             <!-- Rich Benefit Cards Cluster -->
@@ -625,8 +663,8 @@ Not Just Another Ads Session</h2>
                   <i class="ph-bold ph-whatsapp-logo"></i>
                 </div>
                 <div class="benefit-card-content">
-                  <div class="benefit-card-title">Direct WhatsApp &amp; Calendar Invites</div>
-                  <div class="benefit-card-desc">Instant private Zoom room link delivered directly to your WhatsApp and Email</div>
+                  <div class="benefit-card-title">Direct WhatsApp &amp; Calendar Access</div>
+                  <div class="benefit-card-desc">Instant private Zoom room invitation delivered directly to your WhatsApp and Email</div>
                 </div>
               </div>
             </div>
@@ -647,17 +685,6 @@ Not Just Another Ads Session</h2>
                   <span>LIVE</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Micro Zoom annotation note -->
-          <div class="reg-annotation-wrap">
-            <div class="handwritten-note" style="font-size: 1.15rem;">
-              <div>Strictly 50 seats.</div>
-              <div>Confirmed in order!</div>
-              <svg class="arrow-sketch" width="30" height="26" viewBox="0 0 30 26">
-                <path d="M 4 4 Q 20 10 26 22 M 26 22 L 20 18 M 26 22 L 26 14" />
-              </svg>
             </div>
           </div>
 
@@ -717,8 +744,8 @@ Not Just Another Ads Session</h2>
               </div>
 
               <button type="submit" id="submit-reg-btn" class="btn-submit-reg">
-                <span>Reserve My Seat (100% Free)</span>
-                <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+                <span class="d-desktop-only">Reserve My Seat (100% Free) &nbsp;→</span>
+                <span class="d-mobile-only">Reserve Seat (100% Free) &nbsp;→</span>
               </button>
 
               <div class="form-trust-footer">
@@ -754,40 +781,34 @@ Not Just Another Ads Session</h2>
     </section>
 
     <!-- ========================================================
-         8. CLOSING BANNER
+         8. CLOSING EXECUTIVE BANNER (Matching contact.html & about.html)
          ======================================================== -->
     <section class="closing-banner-section" id="closing-cta">
       <div class="page-shell">
         
         <div class="closing-banner-card">
           
-          <div class="closing-meta-pill">
-            <div class="meta-brand-badge" aria-hidden="true">
-              <i class="ph-bold ph-infinity"></i>
+          <div class="closing-brand-side">
+            <div class="brand-wrap">
+              <img src="images/logo.svg" alt="Sunkiran Dimex Logo" class="brand-logo-img">
+              <div class="brand-text">
+                <span class="brand-name">Sunkiran Dimex</span>
+                <span class="brand-tagline">Ads. Growth. Together.</span>
+              </div>
             </div>
-            <div class="meta-brand-text">
-              <span class="meta-brand-title">More Customers</span>
-              <span class="meta-brand-sub">Stronger Business With Meta Ads</span>
-            </div>
+            <p class="closing-quote">"We build predictable customer acquisition systems that scale businesses with high-ROAS clarity."</p>
           </div>
 
-          <div class="closing-middle">
-            <h3 class="closing-h3">Ready to Grow Your Customers?</h3>
-            <p class="closing-desc">Join the live workshop and learn the same system we use for our clients.</p>
-          </div>
-
-          <div class="closing-right">
-            <a href="#register" class="btn-reserve-pill">
-              <span>Reserve My Seat</span>
-              <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+          <div class="closing-action-side">
+            <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20have%20a%20question%20about%20the%20live%20workshop." target="_blank" class="btn-cta-secondary">
+              <i class="ph-bold ph-whatsapp-logo" style="color: #25D366;"></i>
+              <span class="d-desktop-only">Chat on WhatsApp</span>
+              <span class="d-mobile-only">WhatsApp</span>
             </a>
-
-            <div class="handwritten-note closing-annotation" aria-hidden="true">
-              <div>Reserve My Seat</div>
-              <svg class="arrow-sketch" width="28" height="22" viewBox="0 0 28 22" style="margin-left: auto;">
-                <path d="M 22 2 Q 14 16 4 14 M 4 14 L 10 10 M 4 14 L 10 18" />
-              </svg>
-            </div>
+            <a href="#register" class="btn-cta-primary">
+              <span class="d-desktop-only">Reserve My Seat &nbsp;→</span>
+              <span class="d-mobile-only">Reserve Seat &nbsp;→</span>
+            </a>
           </div>
 
         </div>

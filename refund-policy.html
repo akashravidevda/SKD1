@@ -39,6 +39,7 @@
       --electric-blue: #168BFF;
       --cyan: #11C8FF;
       --orange: #FF6508;
+      --orange-bright: #FF7B18;
       --green: #00D894;
       --red: #FF5964;
       --purple: #8F46FF;
@@ -47,7 +48,11 @@
       --text-muted: #8E9FB8;
       --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
       --font-display: 'Plus Jakarta Sans', sans-serif;
-      --max-width: 1360px;
+      --max-width: 1400px;
+      --radius-card: 16px;
+      --radius-md: 10px;
+      --radius-pill: 999px;
+      --transition-fast: 180ms ease;
     }
 
     *, *::before, *::after {
@@ -69,12 +74,16 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(22, 139, 255, 0.12) 0%, transparent 60%),
-        linear-gradient(rgba(58, 140, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(58, 140, 255, 0.025) 1px, transparent 1px);
-      background-size: 100% 100%, 48px 48px, 48px 48px;
       overflow-x: clip;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px currentColor; }
+      50% { opacity: 0.6; box-shadow: 0 0 4px currentColor; }
     }
 
     a {
@@ -1429,31 +1438,12 @@
     <span class="floating-whatsapp-tooltip"><i class="ph-bold ph-chat-teardrop-dots" style="margin-right: 4px;"></i>Chat with us</span>
   </a>
 
-  <!-- Interactive TOC & Animation Script -->
+  <!-- Page Scripts -->
+  <script src="js/app.js"></script>
+
+  <!-- Refund Policy TOC & Animations Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Drawer Toggle
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const drawer = document.getElementById('mobile-nav-drawer');
-      const backdrop = document.getElementById('mobile-nav-backdrop');
-      const closeBtn = document.getElementById('mobile-drawer-close');
-
-      function openDrawer() {
-        if (drawer) drawer.classList.add('active');
-        if (backdrop) backdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeDrawer() {
-        if (drawer) drawer.classList.remove('active');
-        if (backdrop) backdrop.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      if (menuBtn) menuBtn.addEventListener('click', openDrawer);
-      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-      if (backdrop) backdrop.addEventListener('click', closeDrawer);
-
       // Intersection Observer for Active TOC Link Highlight
       const sections = document.querySelectorAll('.legal-content-stream article[id]');
       const desktopLinks = document.querySelectorAll('#desktop-toc-list .toc-link');
