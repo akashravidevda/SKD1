@@ -187,33 +187,53 @@
     .hero-meta-bar {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 12px 18px;
       font-size: 0.86rem;
       color: var(--text-muted);
       flex-wrap: wrap;
-      padding: 14px 20px;
-      background: rgba(4, 25, 54, 0.5);
+      padding: 14px 18px;
+      background: rgba(4, 25, 54, 0.55);
       border: 1px solid var(--border-blue-soft);
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
       margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0, 8, 24, 0.4);
     }
 
     .meta-tag {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-weight: 600;
       color: var(--text-primary);
+      line-height: 1.4;
     }
 
     .meta-tag i {
       color: var(--cyan);
       font-size: 1.05rem;
+      flex-shrink: 0;
     }
 
     .meta-divider {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.22);
+      user-select: none;
+    }
+
+    @media (max-width: 680px) {
+      .hero-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+      }
+      .meta-divider {
+        display: none;
+      }
+      .meta-tag {
+        font-size: 0.84rem;
+        width: 100%;
+      }
     }
 
     /* ========================================================
@@ -893,7 +913,6 @@
         <a href="workshop.html" class="nav-link">Our Workshop</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="privacy-policy.html" class="nav-link">Privacy</a>
-        <a href="terms.html" class="nav-link">Terms</a>
       </nav>
 
       <!-- Right Nav Actions -->
@@ -946,13 +965,7 @@
         <i class="ph-bold ph-paper-plane-tilt"></i> <span>Contact</span>
       </a>
       <a href="privacy-policy.html" class="mobile-nav-link">
-        <i class="ph-bold ph-shield-check"></i> <span>Privacy Policy</span>
-      </a>
-      <a href="terms.html" class="mobile-nav-link">
-        <i class="ph-bold ph-file-text"></i> <span>Terms &amp; Conditions</span>
-      </a>
-      <a href="refund-policy.html" class="mobile-nav-link active">
-        <i class="ph-bold ph-arrow-counter-clockwise"></i> <span>Refund Policy</span>
+        <i class="ph-bold ph-shield-check"></i> <span>Privacy</span>
       </a>
     </div>
 

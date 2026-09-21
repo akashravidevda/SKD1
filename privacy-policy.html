@@ -177,33 +177,37 @@
     .hero-meta-bar {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 12px 18px;
       font-size: 0.86rem;
       color: var(--text-muted);
       flex-wrap: wrap;
-      padding: 14px 20px;
-      background: rgba(4, 25, 54, 0.5);
+      padding: 14px 18px;
+      background: rgba(4, 25, 54, 0.55);
       border: 1px solid var(--border-blue-soft);
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
       margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0, 8, 24, 0.4);
     }
 
     .meta-tag {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-weight: 600;
       color: var(--text-primary);
+      line-height: 1.4;
     }
 
     .meta-tag i {
       color: var(--cyan);
       font-size: 1.05rem;
+      flex-shrink: 0;
     }
 
     .meta-divider {
-      color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.22);
+      user-select: none;
     }
 
     /* ========================================================
