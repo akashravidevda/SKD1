@@ -991,34 +991,99 @@
     </div>
   </footer>
 
-  <!-- Modal Logic (Reused from v1) -->
+  <!-- Consultation Modal -->
   <div id="consultation-modal" class="modal-backdrop">
     <div class="modal-container">
-      <button class="modal-close-btn close-modal-btn">&times;</button>
+
+      <!-- Close Button -->
+      <button class="modal-close-btn close-modal-btn" aria-label="Close modal">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
       <div id="modal-form-content">
-        <div style="margin-bottom: 20px;">
-          <div class="eyebrow-pill" style="margin-bottom: 8px; padding: 4px 14px; font-size: 0.8rem;">Free Consultation</div>
-          <h3 style="font-size: 1.6rem; font-weight: 800; color: #FFFFFF;">Let's Discuss Your Business</h3>
-          <p style="font-size: 0.9rem; color: #9DAEC7; margin-top: 4px;">Tell us about your requirements and we'll build a tailored growth plan.</p>
-        </div>
-        <form id="lead-consultation-form">
-          <div class="form-group"><label class="form-label" for="lead-name">Your Full Name *</label><input type="text" id="lead-name" class="form-input" placeholder="e.g. Rahul Deshmukh" required></div>
-          <div class="form-group"><label class="form-label" for="lead-business">Business Name *</label><input type="text" id="lead-business" class="form-input" placeholder="e.g. EduGrow Academy" required></div>
-          <div class="form-group"><label class="form-label" for="lead-phone">WhatsApp Number *</label><input type="tel" id="lead-phone" class="form-input" placeholder="e.g. +91 86682 XXXXX" required></div>
-          <div class="form-group">
-            <label class="form-label" for="modal-requirement-select">What do you need help with? *</label>
-            <select id="modal-requirement-select" class="form-select" required>
-              <option value="Complete Digital Growth System">Complete Digital Growth System</option>
-              <option value="Website Development">Website Development</option>
-              <option value="Software Development">Software / Web App Development</option>
-              <option value="E-Commerce Development">E-Commerce Development</option>
-              <option value="Meta & Google Ads">Meta & Google Ads</option>
-              <option value="WhatsApp Automation & CRM">WhatsApp Automation & CRM Setup</option>
-            </select>
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-eyebrow">
+            <span class="modal-eyebrow-dot"></span>
+            <span>Free Strategy Session</span>
           </div>
-          <button type="submit" class="btn btn-orange" style="width: 100%; padding: 14px; font-size: 1.05rem;">Submit Requirement &nbsp;→</button>
+          <h3 class="modal-title">Let's Grow Your Business</h3>
+          <p class="modal-subtitle">Tell us what you're building — we'll map out a tailored growth plan on the call.</p>
+        </div>
+
+        <!-- Form -->
+        <form id="lead-consultation-form" class="modal-form" novalidate>
+
+          <div class="modal-form-row">
+            <div class="modal-form-group">
+              <label class="modal-label" for="lead-name">Full Name</label>
+              <div class="modal-input-wrap">
+                <i class="ph-bold ph-user modal-input-icon"></i>
+                <input type="text" id="lead-name" class="modal-input" placeholder="Rahul Sharma" required autocomplete="name">
+              </div>
+            </div>
+
+            <div class="modal-form-group">
+              <label class="modal-label" for="lead-business">Business Name</label>
+              <div class="modal-input-wrap">
+                <i class="ph-bold ph-buildings modal-input-icon"></i>
+                <input type="text" id="lead-business" class="modal-input" placeholder="e.g. EduGrow Academy" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="lead-phone">
+              WhatsApp Number
+              <span class="modal-label-hint">— we send your plan here</span>
+            </label>
+            <div class="modal-input-wrap">
+              <i class="ph-bold ph-whatsapp-logo modal-input-icon modal-input-icon--green"></i>
+              <input type="tel" id="lead-phone" class="modal-input" placeholder="+91 98765 43210" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="modal-form-group">
+            <label class="modal-label" for="modal-requirement-select">What do you need most?</label>
+            <div class="modal-select-wrap">
+              <i class="ph-bold ph-caret-down modal-select-icon"></i>
+              <select id="modal-requirement-select" class="modal-select" required>
+                <option value="" disabled selected>Choose a service…</option>
+                <option value="Complete Digital Growth System">Complete Digital Growth System</option>
+                <option value="Website Development">Website Development</option>
+                <option value="Software Development">Software / Web App Development</option>
+                <option value="E-Commerce Development">E-Commerce Development</option>
+                <option value="Meta & Google Ads">Meta &amp; Google Ads</option>
+                <option value="WhatsApp Automation & CRM">WhatsApp Automation &amp; CRM Setup</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="modal-submit-btn">
+            <i class="ph-bold ph-paper-plane-tilt"></i>
+            <span>Get My Free Growth Plan &nbsp;→</span>
+          </button>
+
+          <!-- Trust Strip -->
+          <div class="modal-trust-strip">
+            <div class="modal-trust-item">
+              <i class="ph-bold ph-shield-check"></i>
+              <span>Zero Spam</span>
+            </div>
+            <div class="modal-trust-item">
+              <i class="ph-bold ph-clock"></i>
+              <span>Reply in 2 hrs</span>
+            </div>
+            <div class="modal-trust-item">
+              <i class="ph-bold ph-currency-inr"></i>
+              <span>100% Free</span>
+            </div>
+          </div>
+
         </form>
       </div>
+
     </div>
   </div>
 
