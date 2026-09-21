@@ -77,6 +77,29 @@ html {
   overflow-x: hidden;
 }
 
+/* Responsive Content Visibility Helpers */
+.d-desktop-only,
+.text-desktop-only {
+  display: inline !important;
+}
+
+.d-mobile-only,
+.text-mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .d-desktop-only,
+  .text-desktop-only {
+    display: none !important;
+  }
+
+  .d-mobile-only,
+  .text-mobile-only {
+    display: inline !important;
+  }
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-secondary);

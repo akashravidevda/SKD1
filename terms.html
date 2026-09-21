@@ -78,6 +78,33 @@
       box-sizing: border-box;
     }
 
+    /* Responsive Content Visibility Helpers */
+    .d-desktop-only,
+    .text-desktop-only,
+    .btn-text-desktop {
+      display: inline !important;
+    }
+
+    .d-mobile-only,
+    .text-mobile-only,
+    .btn-text-mobile {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .d-desktop-only,
+      .text-desktop-only,
+      .btn-text-desktop {
+        display: none !important;
+      }
+
+      .d-mobile-only,
+      .text-mobile-only,
+      .btn-text-mobile {
+        display: inline !important;
+      }
+    }
+
     @media (max-width: 768px) {
       .page-shell {
         padding: 0 16px;
@@ -302,11 +329,14 @@
     </div>
 
     <div class="mobile-drawer-footer">
-      <a href="contact.html" class="btn btn-orange" style="width: 100%; height: 48px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;">
-        <span>Get Free Consultation &nbsp;→</span>
+      <a href="contact.html" class="btn btn-orange">
+        <span class="d-desktop-only">Get Free Consultation &nbsp;→</span>
+        <span class="d-mobile-only">Free Consult &nbsp;→</span>
       </a>
-      <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-glass" style="width: 100%; height: 46px; justify-content: center; gap: 8px; display: flex; align-items: center;">
-        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> <span>Chat on WhatsApp</span>
+      <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-glass">
+        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.15rem; flex-shrink: 0;"></i>
+        <span class="d-desktop-only">Chat on WhatsApp</span>
+        <span class="d-mobile-only">WhatsApp</span>
       </a>
     </div>
   </aside>

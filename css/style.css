@@ -122,6 +122,33 @@ svg {
   }
 }
 
+/* Responsive Content Visibility Helpers */
+.d-desktop-only,
+.text-desktop-only,
+.btn-text-desktop {
+  display: inline !important;
+}
+
+.d-mobile-only,
+.text-mobile-only,
+.btn-text-mobile {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .d-desktop-only,
+  .text-desktop-only,
+  .btn-text-desktop {
+    display: none !important;
+  }
+
+  .d-mobile-only,
+  .text-mobile-only,
+  .btn-text-mobile {
+    display: inline !important;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
