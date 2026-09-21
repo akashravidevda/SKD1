@@ -138,6 +138,15 @@ svg {
   white-space: nowrap;
 }
 
+/* Responsive Button Text Toggles */
+.btn-text-mobile {
+  display: none !important;
+}
+
+.btn-text-desktop {
+  display: inline !important;
+}
+
 .btn-orange {
   background: linear-gradient(135deg, #FF6A00 0%, #E85400 100%);
   color: #FFFFFF;
@@ -4615,42 +4624,54 @@ section[id],
     display: none;
   }
 
-  .hero-cta-row {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-bottom: 18px;
+  /* Responsive 2-Column Side-by-Side CTA Buttons */
+  .btn-text-mobile {
+    display: inline !important;
   }
 
-  .hero-cta-primary {
-    width: 100%;
-    min-width: 0;
-    height: 52px;
-    font-size: 0.98rem;
-    font-weight: 750;
-    padding: 0 20px;
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    white-space: nowrap;
+  .btn-text-desktop {
+    display: none !important;
   }
 
-  .hero-cta-secondary {
-    width: 100%;
-    min-width: 0;
-    height: 48px;
-    font-size: 0.92rem;
-    font-weight: 650;
-    padding: 0 18px;
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    white-space: nowrap;
+  .hero-cta-row,
+  .mobile-drawer-footer,
+  .final-cta-btn-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    gap: 8px !important;
+    margin-bottom: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary,
+  .hero-cta-row > .btn,
+  .mobile-drawer-footer > .btn,
+  .final-cta-btn-row > .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 48px !important;
+    font-size: clamp(0.74rem, 2.7vw, 0.86rem) !important;
+    font-weight: 750 !important;
+    padding: 0 8px !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .hero-cta-primary i,
+  .hero-cta-secondary i,
+  .hero-cta-row > .btn i,
+  .mobile-drawer-footer > .btn i,
+  .final-cta-btn-row > .btn i {
+    font-size: 1.1rem !important;
+    flex-shrink: 0 !important;
   }
 
   .hero-trust-box {
@@ -5313,31 +5334,32 @@ section[id],
     gap: 5px !important;
   }
 
-  /* Hero CTAs on 331px */
-  .hero-cta-row {
-    gap: 8px !important;
-  }
-
-  .hero-cta-primary {
-    height: 50px !important;
-    font-size: 0.88rem !important;
-    padding: 0 14px !important;
-    gap: 8px !important;
-  }
-
-  .hero-cta-primary i {
-    font-size: 1.05rem !important;
-  }
-
-  .hero-cta-secondary {
-    height: 46px !important;
-    font-size: 0.84rem !important;
-    padding: 0 12px !important;
+  /* Hero CTAs & Drawer Buttons on <= 360px */
+  .hero-cta-row,
+  .mobile-drawer-footer,
+  .final-cta-btn-row {
+    grid-template-columns: 1fr 1fr !important;
     gap: 6px !important;
   }
 
-  .hero-cta-secondary i {
-    font-size: 1.15rem !important;
+  .hero-cta-primary,
+  .hero-cta-secondary,
+  .hero-cta-row > .btn,
+  .mobile-drawer-footer > .btn,
+  .final-cta-btn-row > .btn {
+    height: 44px !important;
+    font-size: 0.72rem !important;
+    padding: 0 4px !important;
+    gap: 4px !important;
+    border-radius: 10px !important;
+  }
+
+  .hero-cta-primary i,
+  .hero-cta-secondary i,
+  .hero-cta-row > .btn i,
+  .mobile-drawer-footer > .btn i,
+  .final-cta-btn-row > .btn i {
+    font-size: 0.95rem !important;
   }
 
   /* Trust Indicators */

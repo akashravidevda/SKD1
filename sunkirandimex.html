@@ -4449,42 +4449,54 @@
         display: none;
       }
 
-      .hero-cta-row {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin-bottom: 18px;
+      /* Responsive 2-Column Side-by-Side CTA Buttons */
+      .btn-text-mobile {
+        display: inline !important;
       }
 
-      .hero-cta-primary {
-        width: 100%;
-        min-width: 0;
-        height: 52px;
-        font-size: 0.98rem;
-        font-weight: 750;
-        padding: 0 20px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        white-space: nowrap;
+      .btn-text-desktop {
+        display: none !important;
       }
 
-      .hero-cta-secondary {
-        width: 100%;
-        min-width: 0;
-        height: 48px;
-        font-size: 0.92rem;
-        font-weight: 650;
-        padding: 0 18px;
-        border-radius: 14px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        white-space: nowrap;
+      .hero-cta-row,
+      .mobile-drawer-footer,
+      .final-cta-btn-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        width: 100% !important;
+        gap: 8px !important;
+        margin-bottom: 18px !important;
+        box-sizing: border-box !important;
+      }
+
+      .hero-cta-primary,
+      .hero-cta-secondary,
+      .hero-cta-row > .btn,
+      .mobile-drawer-footer > .btn,
+      .final-cta-btn-row > .btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 48px !important;
+        font-size: clamp(0.74rem, 2.7vw, 0.86rem) !important;
+        font-weight: 750 !important;
+        padding: 0 8px !important;
+        border-radius: 12px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        white-space: nowrap !important;
+        box-sizing: border-box !important;
+        text-overflow: ellipsis !important;
+      }
+
+      .hero-cta-primary i,
+      .hero-cta-secondary i,
+      .hero-cta-row > .btn i,
+      .mobile-drawer-footer > .btn i,
+      .final-cta-btn-row > .btn i {
+        font-size: 1.1rem !important;
+        flex-shrink: 0 !important;
       }
 
       .hero-trust-box {
@@ -5147,31 +5159,32 @@
         gap: 5px !important;
       }
 
-      /* Hero CTAs on 331px */
-      .hero-cta-row {
-        gap: 8px !important;
-      }
-
-      .hero-cta-primary {
-        height: 50px !important;
-        font-size: 0.88rem !important;
-        padding: 0 14px !important;
-        gap: 8px !important;
-      }
-
-      .hero-cta-primary i {
-        font-size: 1.05rem !important;
-      }
-
-      .hero-cta-secondary {
-        height: 46px !important;
-        font-size: 0.84rem !important;
-        padding: 0 12px !important;
+      /* Hero CTAs & Drawer Buttons on <= 360px */
+      .hero-cta-row,
+      .mobile-drawer-footer,
+      .final-cta-btn-row {
+        grid-template-columns: 1fr 1fr !important;
         gap: 6px !important;
       }
 
-      .hero-cta-secondary i {
-        font-size: 1.15rem !important;
+      .hero-cta-primary,
+      .hero-cta-secondary,
+      .hero-cta-row > .btn,
+      .mobile-drawer-footer > .btn,
+      .final-cta-btn-row > .btn {
+        height: 44px !important;
+        font-size: 0.72rem !important;
+        padding: 0 4px !important;
+        gap: 4px !important;
+        border-radius: 10px !important;
+      }
+
+      .hero-cta-primary i,
+      .hero-cta-secondary i,
+      .hero-cta-row > .btn i,
+      .mobile-drawer-footer > .btn i,
+      .final-cta-btn-row > .btn i {
+        font-size: 0.95rem !important;
       }
 
       /* Trust Indicators */
@@ -5408,13 +5421,15 @@
     </div>
 
     <div class="mobile-drawer-footer">
-      <button class="btn btn-orange open-consultation-btn" style="width: 100%; height: 48px; font-size: 0.95rem;">
-        <span>Get Free Consultation &nbsp;→</span>
+      <button class="btn btn-orange open-consultation-btn">
+        <span class="btn-text-desktop">Get Free Consultation &nbsp;→</span>
+        <span class="btn-text-mobile">Get Consult &nbsp;→</span>
       </button>
       <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business."
-        target="_blank" class="btn btn-glass" style="width: 100%; height: 46px; justify-content: center; gap: 8px;">
-        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
-        <span>Chat on WhatsApp</span>
+        target="_blank" class="btn btn-glass">
+        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.15rem; flex-shrink: 0;"></i>
+        <span class="btn-text-desktop">Chat on WhatsApp</span>
+        <span class="btn-text-mobile">WhatsApp</span>
       </a>
     </div>
   </aside>
@@ -5482,12 +5497,14 @@
         <div class="hero-cta-row">
           <button class="btn btn-orange hero-cta-primary open-consultation-btn">
             <i class="ph-fill ph-paper-plane-tilt" style="font-size: 1.15rem; flex-shrink: 0;"></i>
-            <span>Get Free Consultation &nbsp;→</span>
+            <span class="btn-text-desktop">Get Free Consultation &nbsp;→</span>
+            <span class="btn-text-mobile">Get Consult &nbsp;→</span>
           </button>
 
           <button class="btn btn-glass hero-cta-secondary open-video-btn">
             <i class="ph-fill ph-play-circle" style="font-size: 1.25rem; color: #FFFFFF; flex-shrink: 0;"></i>
-            <span>Watch Our Story</span>
+            <span class="btn-text-desktop">Watch Our Story</span>
+            <span class="btn-text-mobile">Watch Story</span>
           </button>
         </div>
 
@@ -7264,13 +7281,16 @@
           measurable growth.
         </p>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+        <div class="final-cta-btn-row">
           <button class="btn btn-orange open-consultation-btn">
-            Get Free Consultation &nbsp;→
+            <span class="btn-text-desktop">Get Free Consultation &nbsp;→</span>
+            <span class="btn-text-mobile">Get Consult &nbsp;→</span>
           </button>
           <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business."
             target="_blank" class="btn btn-glass">
-            <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.3rem;"></i> Chat on WhatsApp
+            <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem; flex-shrink: 0;"></i>
+            <span class="btn-text-desktop">Chat on WhatsApp</span>
+            <span class="btn-text-mobile">WhatsApp</span>
           </a>
         </div>
       </div>

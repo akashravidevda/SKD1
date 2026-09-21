@@ -1278,7 +1278,11 @@ section {
 }
 
 /* Our Commitment */
-.commitment-section { background-color: var(--bg-secondary); }
+.commitment-section {
+  background-color: var(--bg-secondary);
+  padding: clamp(44px, 5vw, 64px) 0 clamp(30px, 3.5vw, 44px);
+  position: relative;
+}
 
 .commitment-grid {
   display: grid;
@@ -1405,7 +1409,8 @@ section {
 /* Footer CTA */
 .footer-cta-section {
   background-color: var(--bg-primary);
-  padding-bottom: 70px;
+  padding: 24px 0 54px;
+  position: relative;
 }
 
 .cta-banner-card {
@@ -1660,7 +1665,10 @@ section {
     padding-bottom: clamp(60px, 8vw, 90px);
   }
   .commitment-section {
-    padding-top: clamp(60px, 8vw, 90px);
+    padding: 40px 0 24px;
+  }
+  .footer-cta-section {
+    padding: 18px 0 44px;
   }
   .hero-facts-row {
     flex-direction: column;
@@ -1826,12 +1834,11 @@ section {
     gap: 12px;
     transform: none !important;
   }
-  .principle-item:first-child,
-  .principle-item,
-  .principle-check-box,
-  .principle-text {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+  .commitment-section {
+    padding: 32px 0 18px;
+  }
+  .footer-cta-section {
+    padding: 14px 0 36px;
   }
 }
 

@@ -850,18 +850,29 @@
         border-radius: 16px;
       }
       .dpo-btn-row {
-        flex-direction: column;
         width: 100%;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
         margin-top: 18px;
+        box-sizing: border-box;
       }
       .btn-action-primary,
       .btn-action-secondary {
         width: 100%;
+        min-width: 0;
         justify-content: center;
         text-align: center;
-        height: 48px;
-        padding: 0 16px;
+        height: 46px;
+        padding: 0 8px;
+        font-size: clamp(0.74rem, 2.7vw, 0.86rem);
+        white-space: nowrap;
+        box-sizing: border-box;
+      }
+      .btn-action-primary i,
+      .btn-action-secondary i {
+        font-size: 1.1rem;
+        flex-shrink: 0;
       }
     }
 
@@ -986,11 +997,14 @@
     </div>
 
     <div class="mobile-drawer-footer">
-      <a href="contact.html" class="btn btn-orange" style="width: 100%; height: 48px; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;">
-        <span>Get Free Consultation &nbsp;→</span>
+      <a href="contact.html" class="btn btn-orange">
+        <span class="btn-text-desktop">Get Free Consultation &nbsp;→</span>
+        <span class="btn-text-mobile">Get Consult &nbsp;→</span>
       </a>
-      <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-glass" style="width: 100%; height: 46px; justify-content: center; gap: 8px; display: flex; align-items: center;">
-        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> <span>Chat on WhatsApp</span>
+      <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business." target="_blank" class="btn btn-glass">
+        <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.15rem; flex-shrink: 0;"></i>
+        <span class="btn-text-desktop">Chat on WhatsApp</span>
+        <span class="btn-text-mobile">WhatsApp</span>
       </a>
     </div>
   </aside>
@@ -1381,12 +1395,14 @@
             <div class="dpo-btn-row">
               <a href="mailto:connect@sunkirandimex.com?subject=Privacy%20Request%20-%20Data%20Management" class="btn-action-primary">
                 <i class="ph-bold ph-envelope-simple" style="font-size: 1.15rem;"></i>
-                <span>Email Data Protection Officer</span>
+                <span class="btn-text-desktop">Email Data Protection Officer</span>
+                <span class="btn-text-mobile">Email DPO</span>
               </a>
 
               <a href="https://wa.me/918668203310?text=Hi%20Sunkiran%20Dimex%2C%20I%20have%20a%20privacy%2Fdata%20related%20inquiry." target="_blank" class="btn-action-secondary">
                 <i class="ph-bold ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
-                <span>Chat via WhatsApp</span>
+                <span class="btn-text-desktop">Chat via WhatsApp</span>
+                <span class="btn-text-mobile">WhatsApp</span>
               </a>
             </div>
           </div>
