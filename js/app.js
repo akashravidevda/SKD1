@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const emailInput = newsletterForm.querySelector('input[type="email"]');
       if (emailInput && emailInput.value) {
-        showToast('🎉 Thank you! ' + emailInput.value + ' has been added to our Growth Insights list.');
+        showToast('Thank you! ' + emailInput.value + ' has been added to our Growth Insights list.');
         emailInput.value = '';
       }
     });
