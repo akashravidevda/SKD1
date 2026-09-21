@@ -1278,11 +1278,7 @@ section {
 }
 
 /* Our Commitment */
-.commitment-section {
-  background-color: var(--bg-secondary);
-  padding: clamp(44px, 5vw, 64px) 0 clamp(30px, 3.5vw, 44px);
-  position: relative;
-}
+.commitment-section { background-color: var(--bg-secondary); }
 
 .commitment-grid {
   display: grid;
@@ -1409,8 +1405,7 @@ section {
 /* Footer CTA */
 .footer-cta-section {
   background-color: var(--bg-primary);
-  padding: 24px 0 54px;
-  position: relative;
+  padding-bottom: 70px;
 }
 
 .cta-banner-card {
@@ -1622,8 +1617,42 @@ section {
   .ambient-who-blue { top: 45%; left: 0; right: auto; }
   .ambient-footer-orange { bottom: 2%; right: 0; left: auto; }
   .hero-right { margin-top: 40px; }
-  .hero-h1 { font-size: 42px; }
-  .section-h2 { font-size: 34px; }
+
+  /* Mobile Typography Polish (Editorial Balance & Ergonomics) */
+  h1, h2, h3, h4, h5, h6,
+  .hero-h1,
+  .section-h2,
+  .service-title,
+  .value-title,
+  .founder-name {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+
+  p,
+  .hero-subtitle,
+  .lead-p,
+  .story-p,
+  .service-desc,
+  .founder-bio {
+    text-wrap: pretty;
+    line-height: 1.58;
+  }
+
+  .hero-h1 { 
+    font-size: clamp(2rem, 7.5vw, 2.6rem); 
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+
+  .section-h2 { 
+    font-size: clamp(1.65rem, 6.2vw, 2.15rem); 
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -1641,12 +1670,15 @@ section {
   }
   .service-title {
     margin-bottom: 8px;
-    font-size: 1.08rem;
+    font-size: 1.1rem;
+    font-weight: 750;
+    line-height: 1.3;
   }
   .service-desc {
     margin-bottom: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #CAD5E2;
   }
   .service-arrow {
     margin-top: 14px;
@@ -1665,10 +1697,7 @@ section {
     padding-bottom: clamp(60px, 8vw, 90px);
   }
   .commitment-section {
-    padding: 40px 0 24px;
-  }
-  .footer-cta-section {
-    padding: 18px 0 44px;
+    padding-top: clamp(60px, 8vw, 90px);
   }
   .hero-facts-row {
     flex-direction: column;
@@ -1761,6 +1790,28 @@ section {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .mobile-drawer-footer {
+    padding-top: 14px;
+    border-top: 1px solid rgba(115, 160, 230, 0.18);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .mobile-drawer-footer .btn {
+    width: 100%;
+    height: 46px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 12px;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
   .what-header-row {
     display: flex;
     flex-direction: row;
@@ -1834,11 +1885,12 @@ section {
     gap: 12px;
     transform: none !important;
   }
-  .commitment-section {
-    padding: 32px 0 18px;
-  }
-  .footer-cta-section {
-    padding: 14px 0 36px;
+  .principle-item:first-child,
+  .principle-item,
+  .principle-check-box,
+  .principle-text {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 }
 

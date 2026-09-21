@@ -1875,8 +1875,40 @@ section {
     padding: 24px 18px !important;
   }
 
-  .hero-h1 { font-size: 38px; }
-  .section-h2 { font-size: 28px; }
+  /* Mobile Typography Polish (Editorial Balance & Ergonomics) */
+  h1, h2, h3, h4, h5, h6,
+  .hero-h1,
+  .section-h2,
+  .module-title,
+  .speaker-name,
+  .ticket-title {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+
+  p,
+  .hero-sub,
+  .section-subtitle,
+  .module-desc,
+  .ticket-feature,
+  .speaker-bio {
+    text-wrap: pretty;
+    line-height: 1.58;
+  }
+
+  .hero-h1 { 
+    font-size: clamp(2rem, 7.5vw, 2.6rem); 
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+
+  .section-h2 { 
+    font-size: clamp(1.65rem, 6.2vw, 2.15rem); 
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
 
   .session-meta-strip {
     display: grid !important;
@@ -2178,10 +2210,41 @@ section {
     font-size: 0.88rem !important;
   }
 
+  .mobile-drawer-footer {
+    padding-top: 14px;
+    border-top: 1px solid rgba(115, 160, 230, 0.18);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-drawer-footer .btn {
+    width: 100%;
+    height: 46px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 12px;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
   .hero-floating-metrics {
     grid-template-columns: 1fr !important;
     gap: 6px !important;
     padding: 10px !important;
+  }
+
+  @media (max-width: 360px) {
+    .mobile-drawer-footer {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
   }
 }
 

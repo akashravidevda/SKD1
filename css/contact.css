@@ -1368,8 +1368,37 @@ img, svg {
   .glow-form-purple { top: 40%; right: 0 !important; }
   .glow-bottom-orange { bottom: 5%; left: 0 !important; }
 
+  /* Mobile Typography Polish (Editorial Balance & Ergonomics) */
+  h1, h2, h3, h4, h5, h6,
+  .hero-h1,
+  .section-h2,
+  .form-title,
+  .channel-title,
+  .closing-title {
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+  }
+
+  p,
+  .hero-sub,
+  .form-desc,
+  .channel-desc,
+  .channel-sub {
+    text-wrap: pretty;
+    line-height: 1.58;
+  }
+
   .hero-h1 {
-    font-size: 30px;
+    font-size: clamp(1.9rem, 7vw, 2.45rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .hero-sub {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: #CAD5E2;
   }
 
   .form-panel-card {
@@ -1404,34 +1433,64 @@ img, svg {
   }
 
   .closing-action-side {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    width: 100% !important;
-    gap: 8px !important;
-    box-sizing: border-box !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
   }
 
   .closing-action-side .btn-cta-primary,
   .closing-action-side .btn-cta-secondary {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 46px !important;
-    padding: 0 8px !important;
-    font-size: clamp(0.74rem, 2.7vw, 0.86rem) !important;
-    font-weight: 750 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
-    border-radius: 12px !important;
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    box-sizing: border-box;
   }
 
-  .closing-action-side .btn-cta-primary i,
-  .closing-action-side .btn-cta-secondary i {
-    font-size: 1.1rem !important;
-    flex-shrink: 0 !important;
+  .mobile-drawer-footer {
+    padding-top: 14px;
+    border-top: 1px solid rgba(115, 160, 230, 0.18);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mobile-drawer-footer .btn {
+    width: 100%;
+    height: 46px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 12px;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 360px) {
+    .closing-action-side {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .mobile-drawer-footer {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
   }
 
   .bottom-bar-inner {
